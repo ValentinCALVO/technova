@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Événements - Intranet TechNova</title>
+  <style>
+    /* Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1e293b; /* Dark blue */
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a; /* Slightly darker */
+      margin: 0;
+    }
+
+    .sidebar nav {
+      flex-grow: 1;
+    }
+
+    .sidebar nav a {
+      text-decoration: none;
+      color: white;
+      padding: 15px 20px;
+      display: block;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #1a56db; /* Darker blue on hover */
+    }
+
+    .sidebar .footer {
+      padding: 10px 20px;
+      font-size: 12px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background-color: #f9fafb; /* Light grey background */
+      min-height: 100vh;
+    }
+
+    .header {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 30px;
+    }
+
+    /* Event Section */
+    .events-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .event-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: calc(33.33% - 20px);
+      box-sizing: border-box;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .event-item:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-item .event-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .event-item .event-description {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .event-item .event-date {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    /* Pastilles/Badges */
+    .event-item .badge {
+      display: inline-block;
+      padding: 10px 1px;
+      font-size: 14px;
+      color: white;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .event-item .badge.danger {
+      background-color: #f44336; /* Red for 'Complet' */
+    }
+
+    .event-item .badge.info {
+      background-color: #17a2b8; /* Blue for 'Nouveau' */
+    }
+
+    .event-item .badge.warning {
+      background-color: #ffc107; /* Yellow for 'Dernières places' */
+    }
+
+    .event-item .cta-btn {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 1px;
+      font-size: 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    .event-item .cta-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 500px;
+      max-width: 90%;
+    }
+
+    .modal-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .modal-body p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      background-color: #f44336;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+ .sidebar nav a.active {
+  background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
+  color: white; /* Texte blanc pour l'élément actif */
+	}
+	
+	 /* Avatar section */
+        .avatar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+    }
+
+        .avatar-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+    }
+
+        .avatar-container span {
+            font-size: 18px;
+            color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+        <a href="/technova/index.html">Accueil</a>
+        <a href="/technova/ressourcesrh.html">Ressources RH</a>
+        <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/ftechnova/formation.html">Formation</a>
+        <a href="/technova/outils.html">Outils & Technologies</a>
+        <a href="/technova/bienetre.html">Bien-être</a>
+        <a href="/technova/evenements.html" class="active">Événements</a>
+        <a href="/technova/feedback.html">Feedback</a>
+      </nav>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+       <!-- User avatar and name -->
+            <div class="avatar-container">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+                <span>Valentin (Manager)</span>
+            </div>
+            
+      <h1>Les événements à la une</h1>
+      
+      <!-- Events Section -->
+      <div class="events-section">
+        <!-- Event Item -->
+        <div class="event-item" onclick="openModal('event1')">
+          <div class="event-title">Atelier télétravail & productivité</div>
+          <p class="event-description">Apprenez à maximiser votre productivité en télétravail avec des astuces pratiques et des outils collaboratifs.</p>
+          <p class="event-date">10 Janvier 2024 - 14:00</p>
+          <span class="badge warning">Dernières places</span>
+          <a href="#" class="cta-btn">Voir les détails</a>
+        </div>
+
+        <div class="event-item" onclick="openModal('event2')">
+          <div class="event-title">Séminaire IA et futur du travail</div>
+          <p class="event-description">Un séminaire sur l'impact de l'IA dans le monde du travail, avec des experts du domaine et des discussions interactives.</p>
+          <p class="event-date">18 Janvier 2024 - 10:00</p>
+          <span class="badge info">Nouveau</span>
+          <a href="#" class="cta-btn">Voir les détails</a>
+        </div>
+
+        <div class="event-item" onclick="openModal('event3')">
+          <div class="event-title">Webinaire gestion d’équipes à distance</div>
+          <p class="event-description">Une session en ligne pour apprendre à gérer efficacement vos équipes en mode hybride et à distance.</p>
+          <p class="event-date">25 Janvier 2024 - 16:00</p>
+          <span class="badge danger">Complet</span>
+          <a href="#" class="cta-btn">Voir les détails</a>
+        </div>
+
+        <!-- New Events -->
+        <div class="event-item" onclick="openModal('event4')">
+          <div class="event-title">Conférence sur le télétravail responsable</div>
+          <p class="event-description">Explorez les enjeux et bonnes pratiques du télétravail responsable dans un environnement numérique.</p>
+          <p class="event-date">26 Novembre 2024 - 15:00</p>
+          <span class="badge info">Nouveau</span>
+          <a href="#" class="cta-btn">Voir les détails</a>
+        </div>
+
+        <div class="event-item" onclick="openModal('event5')">
+          <div class="event-title">Séminaire sur les outils de collaboration</div>
+          <p class="event-description">Découvrez les outils de collaboration à distance pour améliorer l'efficacité de votre équipe en télétravail.</p>
+          <p class="event-date">2 Décembre 2024 - 09:00</p>
+          <span class="badge warning">Dernières places</span>
+          <a href="#" class="cta-btn">Voir les détails</a>
+        </div>
+
+        <div class="event-item" onclick="openModal('event6')">
+          <div class="event-title">Formation leadership à distance</div>
+          <p class="event-description">Améliorez vos compétences en gestion d'équipe avec ce programme de formation axé sur le leadership à distance.</p>
+          <p class="event-date">10 Décembre 2024 - 10:00</p>
+          <span class="badge warning">Dernières places</span>
+          <a href="#" class="cta-btn">Voir les détails</a>
+        </div>
+      </div>
+
+      <!-- Modals for Events -->
+      <div id="event1-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">Atelier télétravail & productivité</div>
+          <div class="modal-body">
+            <p>Un atelier pour améliorer votre productivité en télétravail grâce à des outils collaboratifs, des bonnes pratiques et des conseils d'experts.</p>
+            <p><strong>Date :</strong> 10 Janvier 2024 - 14:00</p>
+            <p><strong>Lieu :</strong> Salle de formation TechNova</p>
+            <button class="close-btn" onclick="closeModal('event1')">Fermer</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="event2-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">Séminaire IA et futur du travail</div>
+          <div class="modal-body">
+            <p>Explorez comment l'IA transforme le monde du travail avec des experts du domaine et une session interactive sur les tendances à venir.</p>
+            <p><strong>Date :</strong> 18 Janvier 2024 - 10:00</p>
+            <p><strong>Lieu :</strong> Salle de conférence TechNova</p>
+            <button class="close-btn" onclick="closeModal('event2')">Fermer</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="event3-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">Webinaire gestion d’équipes à distance</div>
+          <div class="modal-body">
+            <p>Apprenez les meilleures pratiques pour gérer vos équipes à distance avec des outils de collaboration et des stratégies de communication efficaces.</p>
+            <p><strong>Date :</strong> 25 Janvier 2024 - 16:00</p>
+            <p><strong>Lieu :</strong> En ligne via Zoom</p>
+            <button class="close-btn" onclick="closeModal('event3')">Fermer</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="event4-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">Conférence sur le télétravail responsable</div>
+          <div class="modal-body">
+            <p>Explorez les enjeux et bonnes pratiques du télétravail responsable dans un environnement numérique.</p>
+            <p><strong>Date :</strong> 26 Novembre 2024 - 15:00</p>
+            <p><strong>Lieu :</strong> En ligne</p>
+            <button class="close-btn" onclick="closeModal('event4')">Fermer</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="event5-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">Séminaire sur les outils de collaboration</div>
+          <div class="modal-body">
+            <p>Découvrez les outils de collaboration à distance pour améliorer l'efficacité de votre équipe en télétravail.</p>
+            <p><strong>Date :</strong> 2 Décembre 2024 - 09:00</p>
+            <p><strong>Lieu :</strong> Salle de conférence TechNova</p>
+            <button class="close-btn" onclick="closeModal('event5')">Fermer</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="event6-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">Formation leadership à distance</div>
+          <div class="modal-body">
+            <p>Améliorez vos compétences en gestion d'équipe avec ce programme de formation axé sur le leadership à distance.</p>
+            <p><strong>Date :</strong> 10 Décembre 2024 - 10:00</p>
+            <p><strong>Lieu :</strong> Salle de formation TechNova</p>
+            <button class="close-btn" onclick="closeModal('event6')">Fermer</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function openModal(event) {
+          document.getElementById(event + '-modal').style.display = 'flex';
+        }
+
+        function closeModal(event) {
+          document.getElementById(event + '-modal').style.display = 'none';
+        }
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources RH - Intranet TechNova</title>
+    <style>
+        /* Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #1e293b;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar h2 {
+            padding: 20px;
+            text-align: center;
+            background-color: #0f172a;
+            margin: 0;
+        }
+
+        .sidebar nav {
+            flex-grow: 1;
+        }
+
+        .sidebar nav a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #334155;
+        }
+
+        .sidebar .footer {
+            padding: 10px 20px;
+            font-size: 12px;
+            text-align: center;
+            background-color: #0f172a;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+            background-color: #f9fafb;
+            min-height: 100vh;
+        }
+
+        .main h1 {
+            color: #1e293b;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .formation-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: transform 0.2s ease;
+        }
+
+        .formation-card:hover {
+            transform: scale(1.02);
+        }
+
+        .formation-card h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #1e293b;
+        }
+
+        .formation-card p {
+            margin: 5px 0 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .formation-card button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .formation-card button:hover {
+            background-color: #2563eb;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 50%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 4px solid #2563eb;
+            text-align: left;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content h3 {
+            margin: 0 0 15px;
+            font-size: 24px;
+            color: #1e293b;
+        }
+
+        .modal-content p {
+            margin: 0 0 10px;
+            font-size: 16px;
+            color: #374151;
+        }
+
+        .modal-content button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background-color: #2563eb;
+        }
+
+        .close-btn {
+            background-color: #ef4444;
+        }
+
+        .close-btn:hover {
+            background-color: #dc2626;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .sidebar nav a.active {
+  background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
+  color: white; /* Texte blanc pour l'élément actif */
+	}
+	
+	 /* Avatar section */
+        .avatar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+    }
+
+        .avatar-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+    }
+
+        .avatar-container span {
+            font-size: 18px;
+            color: #333;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+         <a href="/technova/index.html">Accueil</a>
+        <a href="/technova/ressourcesrh.html">Ressources RH</a>
+        <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/ftechnova/formation.html" class="active">Formation</a>
+        <a href="/technova/outils.html">Outils & Technologies</a>
+        <a href="/technova/bienetre.html">Bien-être</a>
+        <a href="/technova/evenements.html">Événements</a>
+        <a href="/technova/feedback.html">Feedback</a>
+      </nav>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+        <!-- Main Content -->
+        <div class="main">
+         <!-- User avatar and name -->
+            <div class="avatar-container">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+                <span>Valentin (Manager)</span>
+            </div>
+            <h1>Catalogue de formations</h1>
+            <!-- Formation Cards -->
+            <div class="formation-card">
+                <h4>Formation leadership</h4>
+                <p>Apprenez à diriger avec confiance et stratégie.</p>
+                <button onclick="openModal('leadership')">En savoir plus</button>
+            </div>
+            <div class="formation-card">
+                <h4>Développement web</h4>
+                <p>Maîtrisez les bases et les frameworks modernes.</p>
+                <button onclick="openModal('webdev')">En savoir plus</button>
+            </div>
+            <div class="formation-card">
+                <h4>Gestion de projet</h4>
+                <p>Améliorez vos compétences en gestion d'équipe et de projet.</p>
+                <button onclick="openModal('projet')">En savoir plus</button>
+            </div>
+            <div class="formation-card">
+    <h4>Communication interpersonnelle</h4>
+    <p>Développez vos compétences pour des échanges efficaces.</p>
+    <button onclick="openModal('communication')">En savoir plus</button>
+</div>
+<div class="formation-card">
+    <h4>Analyse de données</h4>
+    <p>Apprenez à exploiter les données pour des décisions éclairées.</p>
+    <button onclick="openModal('data')">En savoir plus</button>
+</div>
+<div class="formation-card">
+    <h4>Créativité et innovation</h4>
+    <p>Stimulez votre imagination pour résoudre des problèmes complexes.</p>
+    <button onclick="openModal('creativite')">En savoir plus</button>
+</div>
+<div class="formation-card">
+    <h4>Résolution de conflits</h4>
+    <p>Acquérez des techniques pour gérer et désamorcer les tensions.</p>
+    <button onclick="openModal('conflit')">En savoir plus</button>
+</div>
+<div class="formation-card">
+    <h4>Gestion du temps</h4>
+    <p>Améliorez votre productivité en optimisant vos priorités.</p>
+    <button onclick="openModal('temps')">En savoir plus</button>
+</div>
+            <!-- Add more formations as needed -->
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="leadership" class="modal">
+        <div class="modal-content">
+            <h3>Formation leadership</h3>
+            <p>Durée : 3 jours<br>Date de début : 5 décembre 2024<br>Participants : 15 inscrits</p>
+            <p>Apprenez à motiver, diriger et inspirer vos équipes.</p>
+            <button class="close-btn" onclick="closeModal('leadership')">Fermer</button>
+            <button>S'inscrire</button>
+        </div>
+    </div>
+    <div id="webdev" class="modal">
+        <div class="modal-content">
+            <h3>Développement web</h3>
+            <p>Durée : 5 jours<br>Date de début : 12 décembre 2024<br>Participants : 20 inscrits</p>
+            <p>Découvrez les outils modernes pour créer des sites web performants.</p>
+            <button class="close-btn" onclick="closeModal('webdev')">Fermer</button>
+            <button>S'inscrire</button>
+        </div>
+    </div>
+    <div id="projet" class="modal">
+        <div class="modal-content">
+            <h3>Gestion de projet</h3>
+            <p>Durée : 4 jours<br>Date de début : 15 décembre 2024<br>Participants : 12 inscrits</p>
+            <p>Améliorez vos compétences en gestion de projet et leadership.</p>
+            <button class="close-btn" onclick="closeModal('projet')">Fermer</button>
+            <button>S'inscrire</button>
+        </div>
+    </div>
+<div id="communication" class="modal">
+    <div class="modal-content">
+        <h3>Communication interpersonnelle</h3>
+        <p>Durée : 2 jours<br>Date de début : 8 décembre 2024<br>Participants : 10 inscrits</p>
+        <p>Maîtrisez les outils pour établir des relations solides et une meilleure communication.</p>
+        <button class="close-btn" onclick="closeModal('communication')">Fermer</button>
+        <button>S'inscrire</button>
+    </div>
+</div>
+<div id="data" class="modal">
+    <div class="modal-content">
+        <h3>Analyse de données</h3>
+        <p>Durée : 5 jours<br>Date de début : 10 décembre 2024<br>Participants : 18 inscrits</p>
+        <p>Apprenez à collecter, analyser et visualiser des données pour des prises de décision éclairées.</p>
+        <button class="close-btn" onclick="closeModal('data')">Fermer</button>
+        <button>S'inscrire</button>
+    </div>
+</div>
+<div id="creativite" class="modal">
+    <div class="modal-content">
+        <h3>Créativité et innovation</h3>
+        <p>Durée : 3 jours<br>Date de début : 14 décembre 2024<br>Participants : 16 inscrits</p>
+        <p>Explorez des techniques innovantes pour libérer votre potentiel créatif.</p>
+        <button class="close-btn" onclick="closeModal('creativite')">Fermer</button>
+        <button>S'inscrire</button>
+    </div>
+</div>
+<div id="conflit" class="modal">
+    <div class="modal-content">
+        <h3>Résolution de conflits</h3>
+        <p>Durée : 2 jours<br>Date de début : 20 décembre 2024<br>Participants : 12 inscrits</p>
+        <p>Développez des compétences pour gérer les conflits avec assurance et diplomatie.</p>
+        <button class="close-btn" onclick="closeModal('conflit')">Fermer</button>
+        <button>S'inscrire</button>
+    </div>
+</div>
+<div id="temps" class="modal">
+    <div class="modal-content">
+        <h3>Gestion du temps</h3>
+        <p>Durée : 1 jour<br>Date de début : 22 décembre 2024<br>Participants : 8 inscrits</p>
+        <p>Apprenez à prioriser et à gérer efficacement votre temps pour atteindre vos objectifs.</p>
+        <button class="close-btn" onclick="closeModal('temps')">Fermer</button>
+        <button>S'inscrire</button>
+    </div>
+</div>
+
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

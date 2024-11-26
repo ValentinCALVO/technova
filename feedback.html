@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Intranet TechNova</title>
+  <style>
+    /* Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1e293b;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a;
+      margin: 0;
+    }
+
+    .sidebar nav {
+      flex-grow: 1;
+    }
+
+    .sidebar nav a {
+      text-decoration: none;
+      color: white;
+      padding: 15px 20px;
+      display: block;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #1a56db;
+    }
+
+    .sidebar .footer {
+      padding: 10px 20px;
+      font-size: 12px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      background-color: #f9fafb;
+      min-height: 100vh;
+      padding: 20px;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    /* Feedback Form */
+    .feedback-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .feedback-container h3 {
+      font-size: 22px;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    .feedback-container input[type="text"],
+    .feedback-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background-color: #f7f7f7;
+    }
+
+    .feedback-container input[type="submit"] {
+      background-color: #3b82f6;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .feedback-container input[type="submit"]:hover {
+      background-color: #2563eb;
+    }
+
+    /* Feedback Cards */
+    .feedback-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      justify-items: stretch;
+      margin-bottom: 40px;
+    }
+
+    .feedback-card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .feedback-card h4 {
+      font-size: 18px;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .feedback-card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .feedback-card .feedback-author {
+      font-size: 14px;
+      color: #888;
+      margin-top: auto;
+    }
+
+    .feedback-card .cta-btn {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      width: fit-content;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .feedback-card .cta-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* Feedback Stats Section */
+    .feedback-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .stat-card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 23%;
+      text-align: center;
+    }
+
+    .stat-card h5 {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1e293b;
+    }
+
+    .stat-card p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Survey Section */
+    .survey-container {
+      background-color: #f3f4f6;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .survey-container h3 {
+      font-size: 22px;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    .survey-container input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .survey-container input[type="submit"] {
+      background-color: #3b82f6;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .survey-container input[type="submit"]:hover {
+      background-color: #2563eb;
+    }
+          .sidebar nav a.active {
+  background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
+  color: white; /* Texte blanc pour l'élément actif */
+	}
+	
+	 /* Avatar section */
+        .avatar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+    }
+
+        .avatar-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+    }
+
+        .avatar-container span {
+            font-size: 18px;
+            color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+        <a href="/technova/index.html">Accueil</a>
+        <a href="/technova/ressourcesrh.html">Ressources RH</a>
+        <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/ftechnova/formation.html">Formation</a>
+        <a href="/technova/outils.html">Outils & Technologies</a>
+        <a href="/technova/bienetre.html">Bien-être</a>
+        <a href="/technova/evenements.html">Événements</a>
+        <a href="/technova/feedback.html" class="active">Feedback</a>
+      </nav>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="header">
+        <h1>Feedback et Suggestions</h1>
+        <p>Nous écoutons vos retours ! Partagez vos avis pour améliorer notre environnement de travail et nos outils.</p>
+      </div>
+
+      <!-- Feedback Form Section -->
+      <div class="feedback-container">
+        <h3>Donnez-nous votre retour</h3>
+        <form>
+          <label for="feedback-name">Nom (facultatif):</label>
+          <input type="text" id="feedback-name" placeholder="Votre nom (facultatif)" />
+          <label for="feedback-message">Votre message :</label>
+          <textarea id="feedback-message" rows="5" placeholder="Écrivez ici votre feedback..."></textarea>
+          <input type="submit" value="Envoyer mon feedback" />
+        </form>
+      </div>
+
+      <!-- Feedback Cards Section -->
+      <div class="feedback-cards">
+        <div class="feedback-card">
+          <h4>Outil de collaboration</h4>
+          <p>Le nouvel outil de gestion des projets est top, mais j'aimerais qu'il soit plus intuitif.</p>
+          <p class="feedback-author">- Julien, Développeur</p>
+          <button class="cta-btn">Voir les détails</button>
+        </div>
+        <div class="feedback-card">
+          <h4>Formation continue</h4>
+          <p>Les sessions de formation sont géniales ! Cependant, j'aimerais plus de contenu sur la gestion du télétravail.</p>
+          <p class="feedback-author">- Sophie, Développeuse</p>
+          <button class="cta-btn">Voir les détails</button>
+        </div>
+        <div class="feedback-card">
+          <h4>Bien-être au travail</h4>
+          <p>Des activités de bien-être régulières sont vraiment bénéfiques. Ce serait bien d'en avoir plus souvent.</p>
+          <p class="feedback-author">- Alain, Responsable Marketing</p>
+          <button class="cta-btn">Voir les détails</button>
+        </div>
+      </div>
+
+      <!-- Feedback Stats Section -->
+      <div class="feedback-stats">
+        <div class="stat-card">
+          <h5>Retours reçus</h5>
+          <p>512</p>
+        </div>
+        <div class="stat-card">
+          <h5>Suggestions de nouveaux outils</h5>
+          <p>89</p>
+        </div>
+        <div class="stat-card">
+          <h5>Suggestions mises en œuvre</h5>
+          <p>37</p>
+        </div>
+      </div>
+
+      <!-- Survey Section -->
+      <div class="survey-container">
+        <h3>Enquête de Satisfaction</h3>
+        <form>
+          <p>Sur une échelle de 1 à 5, comment évaluez-vous votre satisfaction générale au travail ?</p>
+          <input type="radio" id="q1-1" name="q1" value="1" /> 1
+          <input type="radio" id="q1-2" name="q1" value="2" /> 2
+          <input type="radio" id="q1-3" name="q1" value="3" /> 3
+          <input type="radio" id="q1-4" name="q1" value="4" /> 4
+          <input type="radio" id="q1-5" name="q1" value="5" /> 5
+          <input type="submit" value="Soumettre" />
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

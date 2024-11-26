@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outils & Technologies - Intranet TechNova</title>
+  <style>
+    /* Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1e293b; /* Dark blue */
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a; /* Slightly darker */
+      margin: 0;
+    }
+
+    .sidebar nav {
+      flex-grow: 1;
+    }
+
+    .sidebar nav a {
+      text-decoration: none;
+      color: white;
+      padding: 15px 20px;
+      display: block;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #1a56db; /* Darker blue on hover */
+    }
+
+    .sidebar .footer {
+      padding: 10px 20px;
+      font-size: 12px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background-color: #f9fafb; /* Light grey background */
+      min-height: 100vh;
+    }
+
+    /* Tools Section */
+    .tools-section {
+      margin-top: 40px;
+    }
+
+    .tools-header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    .tools-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .tool-card {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 240px; /* Ajuste de la hauteur des cartes */
+    }
+
+    .tool-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .tool-card .tool-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #1e293b;
+    }
+
+    .tool-card h4 {
+      margin: 10px 0;
+      color: #1e293b;
+      font-size: 18px;
+    }
+
+    .tool-card p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 15px;
+      flex-grow: 1; /* Assure que le texte prenne l'espace restant */
+    }
+
+    .tool-card .cta-btn {
+      background-color: #3b82f6; /* Bright blue */
+      color: white;
+      padding: 8px 15px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .tool-card .cta-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* Modale */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 500px;
+    }
+
+    .close-btn {
+      background-color: #f44336;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* Technologies en développement */
+    .technologies-future-section {
+      margin-top: 40px;
+    }
+
+    .technologies-future-header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    .technologies-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .tech-card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 250px;
+      height: 160px;
+    }
+
+    .tech-card h4 {
+      font-size: 18px;
+      color: #1e293b;
+      margin: 10px 0;
+    }
+
+    .tech-card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .tech-card .tech-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #1e293b;
+    }
+ .sidebar nav a.active {
+  background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
+  color: white; /* Texte blanc pour l'élément actif */
+	}
+	
+	 /* Avatar section */
+        .avatar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+    }
+
+        .avatar-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+    }
+
+        .avatar-container span {
+            font-size: 18px;
+            color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+        <a href="/technova/index.html">Accueil</a>
+        <a href="/technova/ressourcesrh.html">Ressources RH</a>
+        <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/ftechnova/formation.html">Formation</a>
+        <a href="/technova/outils.html" class="active">Outils & Technologies</a>
+        <a href="/technova/bienetre.html">Bien-être</a>
+        <a href="/technova/evenements.html">Événements</a>
+        <a href="/technova/feedback.html">Feedback</a>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+     <!-- User avatar and name -->
+            <div class="avatar-container">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+                <span>Valentin (Manager)</span>
+            </div>
+      <!-- Outils & Technologies Section -->
+      <div class="tools-section">
+        <div class="tools-header">
+          Outils à votre disposition
+        </div>
+        <div class="tools-container">
+          <!-- Slack -->
+          <div class="tool-card" onclick="openModal('slack')">
+            <div class="tool-icon">📱</div>
+            <h4>Slack</h4>
+            <p>Communication instantanée d’équipe avec des canaux de discussion. Organisez vos conversations par sujet, équipe et projet.</p>
+            <a href="https://slack.com" target="_blank" class="cta-btn">Accéder à Slack</a>
+          </div>
+
+          <!-- Zoom -->
+          <div class="tool-card" onclick="openModal('zoom')">
+            <div class="tool-icon">💻</div>
+            <h4>Zoom</h4>
+            <p>Réunions vidéo avec partage d’écran. Idéal pour les conférences et les présentations d’équipe.</p>
+            <a href="https://zoom.us" target="_blank" class="cta-btn">Accéder à Zoom</a>
+          </div>
+
+          <!-- Trello -->
+          <div class="tool-card" onclick="openModal('trello')">
+            <div class="tool-icon">📋</div>
+            <h4>Trello</h4>
+            <p>Gestion de projets visuelle et collaborative. Suivez les tâches et les projets de manière simple et intuitive.</p>
+            <a href="https://trello.com" target="_blank" class="cta-btn">Accéder à Trello</a>
+          </div>
+
+          <!-- Google Drive -->
+          <div class="tool-card" onclick="openModal('drive')">
+            <div class="tool-icon">☁️</div>
+            <h4>Google Drive</h4>
+            <p>Stockage cloud sécurisé. Partagez et collaborez en temps réel sur vos fichiers et documents.</p>
+            <a href="https://drive.google.com" target="_blank" class="cta-btn">Accéder à Drive</a>
+          </div>
+
+          <!-- Microsoft Teams -->
+          <div class="tool-card" onclick="openModal('microsoft_teams')">
+            <div class="tool-icon">🖥️</div>
+            <h4>Microsoft Teams</h4>
+            <p>Plateforme de communication avec messagerie, appels vidéo et partage de fichiers.</p>
+            <a href="https://teams.microsoft.com" target="_blank" class="cta-btn">Accéder à Teams</a>
+          </div>
+
+          <!-- Notion -->
+          <div class="tool-card" onclick="openModal('notion')">
+            <div class="tool-icon">📝</div>
+            <h4>Notion</h4>
+            <p>Organisation et gestion des tâches, notes et bases de données. Un outil tout-en-un.</p>
+            <a href="https://www.notion.so" target="_blank" class="cta-btn">Accéder à Notion</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Future Technologies -->
+      <div class="technologies-future-section">
+        <div class="technologies-future-header">
+          Technologies en développement
+        </div>
+        <div class="technologies-list">
+          <div class="tech-card">
+            <div class="tech-icon">🤖</div>
+            <h4>Intelligence Artificielle</h4>
+            <p>La prochaine frontière de l'automatisation et de l'analyse de données.</p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">🕶️</div>
+            <h4>Réalité virtuelle</h4>
+            <p>Les réunions et la collaboration dans un espace virtuel en 3D.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for each tool -->
+      <div id="zoom-modal" class="modal">
+        <div class="modal-content">
+          <h3>Zoom</h3>
+          <p>Zoom est utilisé pour des réunions vidéo et des webinaires. Partagez votre écran et collaborez en temps réel avec vos collègues.</p>
+          <button class="close-btn" onclick="closeModal('zoom')">Fermer</button>
+        </div>
+      </div>
+
+      <!-- Add modals for other tools as well -->
+
+      <script>
+        function openModal(tool) {
+          document.getElementById(tool + '-modal').style.display = 'flex';
+        }
+
+        function closeModal(tool) {
+          document.getElementById(tool + '-modal').style.display = 'none';
+        }
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>

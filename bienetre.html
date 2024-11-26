@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bien-être - Intranet TechNova</title>
+  <style>
+    /* Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1e293b;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a;
+      margin: 0;
+    }
+
+    .sidebar nav {
+      flex-grow: 1;
+    }
+
+    .sidebar nav a {
+      text-decoration: none;
+      color: white;
+      padding: 15px 20px;
+      display: block;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #1a56db;
+    }
+
+    .sidebar .footer {
+      padding: 10px 20px;
+      font-size: 12px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background-color: #f9fafb;
+      min-height: 100vh;
+    }
+
+    .header {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    .section-content {
+      margin-bottom: 40px;
+    }
+
+    /* Tips for well-being */
+    .tips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .tip-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: calc(33.33% - 30px);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tip-item:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .tip-item img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .tip-item h3 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1e293b;
+    }
+
+    .tip-item p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    /* Event section */
+    .events-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .event-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: calc(33.33% - 20px);
+      box-sizing: border-box;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .event-item:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-item .event-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .event-item .event-description {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .event-item .event-date {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    .event-item .cta-btn {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 15px;
+      font-size: 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .event-item .cta-btn:hover {
+      background-color: #2563eb;
+    }
+
+    .cta-btn.small {
+      background-color: #ffcc00;
+    }
+
+    .cta-btn.small:hover {
+      background-color: #ffb800;
+    }
+
+    /* Quote Section */
+    .quote-container {
+      background-color: #e2e8f0;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .quote-container blockquote {
+      font-size: 20px;
+      font-style: italic;
+      color: #1e293b;
+    }
+
+    .quote-container cite {
+      font-size: 16px;
+      color: #555;
+    }
+    .sidebar nav a.active {
+  background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
+  color: white; /* Texte blanc pour l'élément actif */
+	}
+	
+	 /* Avatar section */
+        .avatar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+    }
+
+        .avatar-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+    }
+
+        .avatar-container span {
+            font-size: 18px;
+            color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+        <a href="/technova/index.html">Accueil</a>
+        <a href="/technova/ressourcesrh.html">Ressources RH</a>
+        <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/ftechnova/formation.html">Formation</a>
+        <a href="/technova/outils.html">Outils & Technologies</a>
+        <a href="/technova/bienetre.html" class="active">Bien-être</a>
+        <a href="/technova/evenements.html">Événements</a>
+        <a href="/technova/feedback.html">Feedback</a>
+      </nav>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <!-- User avatar and name -->
+            <div class="avatar-container">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+                <span>Valentin (Manager)</span>
+            </div>
+            
+      <h1>Bien-être au travail chez TechNova</h1>
+
+      <!-- Introduction Section -->
+      <div class="section-content">
+        <p>Chez TechNova, nous savons que travailler à distance peut représenter des défis supplémentaires en matière de bien-être. C'est pourquoi nous avons mis en place plusieurs initiatives et ressources pour vous aider à prendre soin de vous, tout en restant productif. Découvrez nos conseils pratiques, nos événements bien-être et d'autres ressources pour vous aider à trouver un équilibre parfait.</p>
+      </div>
+
+      <!-- Tips for well-being -->
+      <div class="section-content">
+        <div class="section-title">Conseils pour améliorer votre bien-être au télétravail</div>
+        <div class="tips-container">
+          <div class="tip-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/717/717899.png" alt="Ergonomie">
+            <h3>Optimisez votre espace de travail</h3>
+            <p>Un bon aménagement de votre espace de travail à domicile est essentiel pour votre confort et votre productivité. Assurez-vous d'avoir une chaise confortable et un bureau adapté à vos besoins.</p>
+          </div>
+          <div class="tip-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2191/2191432.png" alt="Pause">
+            <h3>Rappelez-vous de faire des pauses</h3>
+            <p>Les pauses sont cruciales pour éviter la fatigue mentale. Intégrez des pauses régulières dans votre journée pour vous détendre, vous étirer ou prendre un peu de temps pour vous.</p>
+          </div>
+          <div class="tip-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/4831/4831150.png" alt="Sport">
+            <h3>Pratiquez une activité physique</h3>
+            <p>Rester actif est fondamental pour votre bien-être physique et mental. Essayez d'intégrer des exercices simples dans votre routine quotidienne, même pendant vos pauses.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inspirational Quote Section -->
+      <div class="quote-container">
+        <blockquote>
+          "Le bien-être au travail n'est pas un luxe, c'est un investissement dans votre productivité et votre épanouissement."
+        </blockquote>
+        <cite>- TechNova</cite>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
