@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Kit - Parcours Interactif</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('/Corps.png');
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+    }
+
+    p {
+      text-align: center;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Path */
+    .path {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .step .icon {
+      font-size: 40px;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      border: 3px solid #ddd;
+      background-color: white;
+      color: #333;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .step.active .icon,
+    .step.complete .icon {
+      border-color: #16a7a5;
+      background-color: #16a7a5;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .step p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Connector */
+    .connector {
+      width: 100px;
+      height: 4px;
+      background-color: #ddd;
+      flex: 1;
+      margin: 0 10px;
+      transition: background-color 0.3s;
+    }
+
+    .connector.active {
+      background-color: #16a7a5;
+    }
+
+    /* Content section */
+    .content {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .content h2 {
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+    }
+
+    .popup h2 {
+      color: #1e7e1e;
+    }
+
+    .popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #3b82f6;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .popup button:hover {
+      background-color: #2563eb;
+    }
+    
+    .download-btn {
+      padding: 10px 20px;
+      background-color: #16a7a5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #16a7a5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome Kit</h1>
+    <p>Progressez à travers les étapes pour découvrir tout ce que nous avons préparé pour vous !</p>
+
+    <!-- Path -->
+    <div class="path" id="path">
+      <div class="step active" data-step="1" onclick="showContent(1)">
+        <div class="icon">💼</div>
+        <p><font color="white">Vision d’entreprise</font></p>
+      </div>
+      <div class="connector"></div>
+      <div class="step" data-step="2" onclick="showContent(2)">
+        <div class="icon">🖥️</div>
+        <p><font color="white">Guide télétravail</font></p>
+      </div>
+      <div class="connector"></div>
+      <div class="step" data-step="3" onclick="showContent(3)">
+        <div class="icon">📚</div>
+        <p><font color="white">Outils numériques</font></p>
+      </div>
+      <div class="connector"></div>
+      <div class="step" data-step="4" onclick="showContent(4)">
+        <div class="icon">💪</div>
+        <p><font color="white">Bien-être et productivité</font></p>
+      </div>
+      <div class="connector"></div>
+      <div class="step" data-step="5" onclick="showContent(5)">
+        <div class="icon">🤝</div>
+        <p><font color="white">Intégration dans l'équipe</font></p>
+      </div>
+      <div class="connector"></div>
+      <div class="step" data-step="6" onclick="showContent(6)">
+        <div class="icon">💡</div>
+        <p><font color="white">Culture et valeurs</font></p>
+      </div>
+      <div class="connector"></div>
+      <div class="step" data-step="7" onclick="showContent(7)">
+        <div class="icon">📈</div>
+        <p><font color="white">Formation continue</font></p>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div id="content-1" class="content active">
+      <h2>Vision d’entreprise</h2>
+      <p>Chez TechNova, notre vision est de promouvoir un environnement de travail flexible, axé sur l'innovation et la collaboration. Le télétravail est un pilier essentiel pour permettre à chacun d'exceller tout en maintenant un équilibre entre vie professionnelle et personnelle.</p>
+      <p><strong>Notre objectif : </strong>Rassembler les équipes autour d’une vision commune et rendre le travail à distance aussi fluide et productif qu’au bureau. Votre contribution est essentielle pour atteindre ces objectifs.</p>
+    </div>
+
+    <div id="content-2" class="content">
+      <h2>Guide Télétravail</h2>
+      <p>Le télétravail peut être un challenge, mais avec la bonne organisation, il devient un atout. Découvrez des conseils pratiques pour optimiser votre espace de travail, gérer votre emploi du temps et maintenir une productivité constante à la maison.</p>
+      <p><strong>Notre recommandation :</strong> Organisez votre espace, réduisez les distractions et définissez un emploi du temps flexible mais structuré. Pour vous aider, nous avons créé un <a href="#">guide complet</a> pour vous accompagner dans cette transition.</p>
+      <button class="download-btn" onclick="window.open('charte-teletravail.pdf', '_blank')">Télécharger la Charte du Télétravail</button>
+    </div>
+
+    <div id="content-3" class="content">
+      <h2>Outils Numériques</h2>
+      <p>Les outils numériques sont la clé pour maintenir une collaboration fluide à distance. Nous mettons à votre disposition des plateformes comme Teams, Slack et Trello pour gérer vos projets, communiquer avec vos collègues et collaborer efficacement en ligne.</p>
+      <p><strong>Outils recommandés :</strong> Utilisez Teams pour les réunions virtuelles, Slack pour la messagerie instantanée et Trello pour la gestion de vos projets.</p>
+    </div>
+
+    <div id="content-4" class="content">
+      <h2>Bien-être et Productivité</h2>
+      <p>Nous comprenons l'importance du bien-être au travail. Découvrez des conseils pour rester motivé, gérer votre stress et maintenir un équilibre entre travail et vie personnelle.</p>
+      <p><strong>Ressources recommandées :</strong> Des activités bien-être en ligne, des horaires flexibles et des pauses régulières peuvent aider à maintenir votre énergie et votre efficacité tout au long de la journée.</p>
+    </div>
+
+    <div id="content-5" class="content">
+      <h2>Intégration dans l’équipe</h2>
+      <p>L'intégration dans l'équipe est essentielle pour réussir en télétravail. Nous mettons en place des programmes d'intégration à distance pour vous permettre de mieux connaître vos collègues et comprendre votre rôle au sein de TechNova.</p>
+      <p><strong>Nos conseils :</strong> N’hésitez pas à participer aux réunions virtuelles de l’équipe et à vous présenter dans le groupe Slack. La communication est essentielle !</p>
+    </div>
+
+    <div id="content-6" class="content">
+      <h2>Culture et Valeurs</h2>
+      <p>Chez TechNova, nous valorisons la diversité, l’innovation et l’agilité. Ces valeurs sont le fondement de notre culture d’entreprise et nous motivent à avancer ensemble vers de nouveaux défis.</p>
+    </div>
+
+    <div id="content-7" class="content">
+      <h2>Formation Continue</h2>
+      <p>Chez TechNova, nous croyons en la formation continue. Nous proposons des ressources pour vous permettre de développer vos compétences, que ce soit à travers des webinaires, des cours en ligne ou des projets internes.</p>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <h2>Félicitations ! 🎉</h2>
+    <p>Vous avez terminé votre parcours Welcome Kit. Vous êtes maintenant prêt à commencer votre aventure avec TechNova. Bienvenue parmi nous !</p>
+    <button onclick="closePopup()">Fermer</button>
+  </div>
+
+  <script>
+    let currentStep = 1;
+
+    function showContent(step) {
+      const steps = document.querySelectorAll('.step');
+      const contents = document.querySelectorAll('.content');
+      const connectors = document.querySelectorAll('.connector');
+      
+      // Hide all contents
+      contents.forEach(content => content.classList.remove('active'));
+      
+      // Show current step content
+      document.getElementById(`content-${step}`).classList.add('active');
+      
+      // Update step status
+      for (let i = 0; i < steps.length; i++) {
+        if (i < step) {
+          steps[i].classList.add('complete');
+          connectors[i].classList.add('active');
+        } else {
+          steps[i].classList.remove('complete');
+        }
+      }
+
+      // Set current step
+      currentStep = step;
+
+      // Show popup on last step
+      if (step === 7) {
+        setTimeout(() => {
+          document.getElementById('popup').style.display = 'block';
+        }, 500);
+      }
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
