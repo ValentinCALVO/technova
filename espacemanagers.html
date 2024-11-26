@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Managers - Intranet TechNova</title>
+  <style>
+    /* Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1e293b; /* Dark blue */
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a; /* Slightly darker */
+      margin: 0;
+    }
+
+    .sidebar nav {
+      flex-grow: 1;
+    }
+
+    .sidebar nav a {
+      text-decoration: none;
+      color: white;
+      padding: 15px 20px;
+      display: block;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #1a56db; /* Darker blue on hover */
+    }
+
+    .sidebar .footer {
+      padding: 10px 20px;
+      font-size: 12px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background-color: #f9fafb; /* Light grey background */
+      min-height: 100vh;
+    }
+
+    .main h1 {
+      color: #1e293b;
+    }
+
+    /* Manager Tools Section */
+    .manager-tools {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .tool-item {
+      background-color: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .tool-item a {
+      text-decoration: none;
+      color: #1e293b;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .tool-item a:hover {
+      color: #3b82f6; /* Blue on hover */
+    }
+
+    .tool-item span {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Form Styles */
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      display: none;
+    }
+
+    .form-container h3 {
+      color: #1e293b;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form-container button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: fit-content;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #2563eb;
+    }
+
+    /* Footer Section */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+    }
+    .sidebar nav a.active {
+      background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
+      color: white; /* Texte blanc pour l'élément actif */
+    }
+    
+    /* Avatar section */
+    .avatar-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .avatar-container img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .avatar-container span {
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+    }
+
+    table td button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    table td button:hover {
+      background-color: #45a049;
+    }
+
+    /* Arrow style for steps */
+    .step-arrow {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background-color: #3b82f6;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      margin: 0 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .step-arrow:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+        <a href="/index.php">Accueil</a>
+        <a href="/ressourcesrh.php">Ressources RH</a>
+        <a href="/espacemanagers.php" class="active">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/formation.php">Formation</a>
+        <a href="/outils.php">Outils & Technologies</a>
+        <a href="/bienetre.php">Bien-être</a>
+        <a href="/evenements.php">Événements</a>
+        <a href="/feedback.php">Feedback</a>
+      </nav>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <!-- User avatar and name -->
+      <div class="avatar-container">
+        <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+        <span>Valentin (Manager)</span>
+      </div>
+
+      <h1>Espace Managers</h1>
+      <p>Dans cet espace, vous pouvez gérer les demandes de congé, suivre la performance de vos équipes, et bien plus encore.</p>
+
+      <!-- Manager Tools Section -->
+      <div class="manager-tools">
+        <div class="tool-item" id="approve-conge" onclick="toggleForm('approve-conge-form')">
+          <span>Approbation des congés</span>
+        </div>
+        <div class="tool-item" id="suivi-performance" onclick="toggleForm('suivi-performance-form')">
+          <span>Suivi de la performance</span>
+        </div>
+        <div class="tool-item" id="gestion-equipe" onclick="toggleForm('gestion-equipe-form')">
+          <span>Gestion de l'équipe</span>
+        </div>
+        <div class="tool-item" id="feedback-collaborateurs" onclick="toggleForm('feedback-form')">
+          <span>Feedback collaborateurs</span>
+        </div>
+      </div>
+
+      <!-- Approbation des Congés -->
+      <div class="form-container" id="approve-conge-form">
+        <h3>Approbation des congés</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Date de début</th>
+              <th>Date de fin</th>
+              <th>Type de congé</th>
+              <th>Raison</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>2024-12-01</td>
+              <td>2024-12-05</td>
+              <td>Congé annuel</td>
+              <td>Vacances personnelles</td>
+              <td>
+                <button onclick="approveLeave('John Doe')">Approuver</button>
+                <button onclick="rejectLeave('John Doe')">Refuser</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>2024-12-20</td>
+              <td>2024-12-22</td>
+              <td>Congé maladie</td>
+              <td>Problèmes de santé</td>
+              <td>
+                <button onclick="approveLeave('Jane Smith')">Approuver</button>
+                <button onclick="rejectLeave('Jane Smith')">Refuser</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Suivi de la Performance -->
+      <div class="form-container" id="suivi-performance-form">
+        <h3>Suivi de la performance des équipes</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Objectif</th>
+              <th>Progrès</th>
+              <th>Évaluation</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Projet A</td>
+              <td>80%</td>
+              <td>Bon</td>
+              <td>
+                <button>Voir le rapport</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>Projet B</td>
+              <td>60%</td>
+              <td>À améliorer</td>
+              <td>
+                <button>Voir le rapport</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Gestion de l'Équipe -->
+      <div class="form-container" id="gestion-equipe-form">
+        <h3>Gestion de l'équipe</h3>
+        <p>Consultez la liste des membres de l'équipe et les informations relatives à leur travail.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Poste</th>
+              <th>Projet Actuel</th>
+              <th>Performance</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Développeur</td>
+              <td>Application Web</td>
+              <td>Bon</td>
+              <td><button>Voir les détails</button></td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>Chef de projet</td>
+              <td>Projet B</td>
+              <td>À améliorer</td>
+              <td><button>Voir les détails</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Feedback Collaborateurs -->
+      <div class="form-container" id="feedback-form">
+        <h3>Feedback collaborateurs</h3>
+        <form action="">
+          <div>
+            <label for="feedback-stage">Étape du feedback :</label>
+            <select id="feedback-stage" name="feedback-stage">
+              <option value="performance">Performance</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="innovation">Innovation</option>
+            </select>
+          </div>
+          <div>
+            <label for="feedback-message">Commentaires :</label>
+            <textarea id="feedback-message" name="feedback-message" rows="5" placeholder="Entrez vos commentaires ici"></textarea>
+          </div>
+          <div>
+            <button type="submit">Envoyer Feedback</button>
+          </div>
+        </form>
+      </div>
+
+  <script>
+    function toggleForm(formId) {
+      var forms = document.querySelectorAll('.form-container');
+      forms.forEach(function (form) {
+        form.style.display = 'none';
+      });
+      var selectedForm = document.getElementById(formId);
+      selectedForm.style.display = 'block';
+    }
+
+    function approveLeave(name) {
+      alert(name + ' : Congé approuvé');
+    }
+
+    function rejectLeave(name) {
+      alert(name + ' : Congé refusé');
+    }
+  </script>
+</body>
+
+</html>
