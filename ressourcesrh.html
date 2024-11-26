@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources RH - Intranet TechNova</title>
+    <style>
+        /* Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #1e293b;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar h2 {
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a; /* Slightly darker */
+      margin: 0;
+        }
+
+        .sidebar nav {
+            flex-grow: 1;
+        }
+
+        .sidebar nav a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #1a56db;
+        }
+
+        .sidebar .footer {
+            padding: 10px 20px;
+            font-size: 12px;
+            text-align: center;
+            background-color: #0f172a;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+            background-color: #f9fafb;
+            min-height: 100vh;
+        }
+
+        .main h1 {
+            color: #1e293b;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            color: #1e293b;
+            margin-top: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #e5e5e5;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Form styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #2563eb;
+        }
+
+        /* Status colors */
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .status.en-attente {
+            background-color: #f59e0b; /* Orange */
+        }
+
+        .status.refuse {
+            background-color: #ef4444; /* Red */
+        }
+
+        .status.accepte {
+            background-color: #10b981; /* Green */
+        }
+
+        /* Calendar */
+        .calendar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Avatar section */
+        .avatar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .avatar-container span {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* List */
+        .requests-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .requests-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .requests-list li .request-info {
+            flex-grow: 1;
+        }
+
+        /* Section specific styles */
+        .request-details {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .request-details span {
+            font-weight: bold;
+        }
+         .sidebar nav a.active {
+  background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
+  color: white; /* Texte blanc pour l'élément actif */
+	}
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+        <a href="/index.php">Accueil</a>
+        <a href="/ressourcesrh.php" class="active">Ressources RH</a>
+        <a href="/espacemanagers.php">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/formation.php">Formation</a>
+        <a href="/outils.php">Outils & Technologies</a>
+        <a href="/bienetre.php">Bien-être</a>
+        <a href="/evenements.php">Événements</a>
+        <a href="feedback.php">Feedback</a>
+      </nav>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <!-- User avatar and name -->
+            <div class="avatar-container">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+                <span>Valentin (Manager)</span>
+            </div>
+
+            <h1>Ressources RH</h1>
+
+            <!-- Formulaire de demande de congé -->
+            <div id="demande-conge" class="section">
+                <h3>Formulaire de demande de congé</h3>
+                <p>Veuillez remplir ce formulaire pour faire une demande de congé. Une fois le formulaire soumis, votre manager recevra une notification pour validation.</p>
+
+                <form action="#" method="POST">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" value="Valentin" readonly>
+
+                    <label for="date-debut">Date de début :</label>
+                    <input type="date" id="date-debut" name="date-debut" class="calendar" required>
+
+                    <label for="date-fin">Date de fin :</label>
+                    <input type="date" id="date-fin" name="date-fin" class="calendar" required>
+
+                    <label for="type-conge">Type de congé :</label>
+                    <select id="type-conge" name="type-conge" required>
+                        <option value="conge-paye">Congé payé</option>
+                        <option value="conge-maladie">Congé maladie</option>
+                        <option value="conge-sans-solde">Congé sans solde</option>
+                    </select>
+
+                    <label for="motif">Motif du congé :</label>
+                    <textarea id="motif" name="motif" rows="4" required></textarea>
+
+                    <button type="submit">Soumettre la demande</button>
+                </form>
+
+                <!-- Demo: Liste des demandes -->
+                <h4>Historique des demandes</h4>
+                <ul class="requests-list">
+                    <li>
+                        <div class="request-info">
+                            <span>Valentin</span><br>
+                            <span class="request-details">Demande du 10 au 12 Décembre 2024 - Congé payé</span>
+                        </div>
+                        <span class="status en-attente">En attente</span>
+                    </li>
+                    <li>
+                        <div class="request-info">
+                            <span>Valentin</span><br>
+                            <span class="request-details">Demande du 5 au 10 Décembre 2023 - Congé maladie</span>
+                        </div>
+                        <span class="status accepte">Acceptée</span>
+                    </li>
+                    <li>
+                        <div class="request-info">
+                            <span>Valentin</span><br>
+                            <span class="request-details">Demande du 20 au 25 Novembre 2023 - Congé sans solde</span>
+                        </div>
+                        <span class="status refuse">Refusée</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Politique de Télétravail -->
+            <div id="politique-teletravail" class="section">
+                <h3>Politique de télétravail</h3>
+                <p>Découvrez la politique officielle sur le télétravail chez TechNova :</p>
+                <ul>
+                    <li>Le télétravail est possible jusqu'à 4 jours par semaine.</li>
+                    <li>Un espace de travail dédié à la maison est recommandé pour une productivité optimale.</li>
+                    <li>Les communications doivent être maintenues via Slack, Zoom, ou par email pendant les heures de travail.</li>
+                </ul>
+            </div>
+
+            <!-- Avantages Sociaux -->
+            <div id="avantages-sociaux" class="section">
+                <h3>Avantages sociaux</h3>
+                <p>Voici quelques-uns des avantages sociaux offerts par TechNova :</p>
+                <ul>
+                    <li>Mutuelle santé prise en charge à 100% pour l'employé et sa famille.</li>
+                    <li>Abonnement annuel à des plateformes de formation en ligne (Coursera, LinkedIn Learning).</li>
+                    <li>Prime de télétravail unique de 150 euros pour l'achat de mobilier (bureau, chaise, etc.)</li>
+                    <li>Une prime mensuelle de 22 euros pour couvrir les frais de connexion internet.</li>
+                    <li>Accès à des programmes de bien-être (sport, coaching, relaxation).</li>
+                </ul>
+            </div>
+
+            <!-- Formulaire d'Intégration -->
+            <div id="formulaire-integration" class="section">
+                <h3>Formulaire d'intégration</h3>
+                <p>Bienvenue chez TechNova ! Veuillez remplir ce formulaire pour compléter votre processus d'intégration.</p>
+                <form action="#" method="POST">
+                    <label for="nom-employee">Nom :</label>
+                    <input type="text" id="nom-employee" name="nom-employee" value="Valentin" readonly>
+
+                    <label for="poste">Poste :</label>
+                    <input type="text" id="poste" name="poste" required>
+
+                    <label for="date-integration">Date d'intégration :</label>
+                    <input type="date" id="date-integration" name="date-integration" required>
+
+                    <label for="responsable">Nom du responsable :</label>
+                    <input type="text" id="responsable" name="responsable" required>
+
+                    <button type="submit">Soumettre</button>
+                </form>
+            </div>
+
+            <!-- Procédure de Remboursement -->
+            <div id="remboursement" class="section">
+                <h3>Procédure de remboursement</h3>
+                <p>Voici le formulaire pour soumettre une demande de remboursement :</p>
+                <form action="#" method="POST">
+                    <label for="type-frais">Type de frais :</label>
+                    <select id="type-frais" name="type-frais" required>
+                        <option value="transport">Transport</option>
+                        <option value="hebergement">Hébergement</option>
+                        <option value="repas">Repas</option>
+                    </select>
+
+                    <label for="montant">Montant :</label>
+                    <input type="number" id="montant" name="montant" required>
+
+                    <label for="justificatifs">Justificatifs :</label>
+                    <input type="file" id="justificatifs" name="justificatifs" accept="image/*,application/pdf" required>
+
+                    <button type="submit">Soumettre</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
