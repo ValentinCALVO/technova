@@ -215,6 +215,23 @@
   background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
   color: white; /* Texte blanc pour l'élément actif */
 	}
+	/* Bouton de téléchargement */
+.btn-teletravail {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-teletravail:hover {
+    background-color: #2563eb;
+}
+
     </style>
 </head>
 
@@ -224,7 +241,7 @@
     <div class="sidebar">
       <h2>TechNova Intranet</h2>
       <nav>
-        <a href="/technova/index.html">Accueil</a>
+       	<a href="/technova/index.html">Accueil</a>
         <a href="/technova/ressourcesrh.html" class="active">Ressources RH</a>
         <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
         <a href="/technova/formation.html">Formation</a>
@@ -232,6 +249,7 @@
         <a href="/technova/bienetre.html">Bien-être</a>
         <a href="/technova/evenements.html">Événements</a>
         <a href="/technova/feedback.html">Feedback</a>
+        <a href="/technova/temoignages.html">Derniers témoignages</a>
       </nav>
       <div class="footer">
         © 2024 TechNova
@@ -307,6 +325,8 @@
             <div id="politique-teletravail" class="section">
                 <h3>Politique de télétravail</h3>
                 <p>Découvrez la politique officielle sur le télétravail chez TechNova :</p>
+                <!-- Ajout du bouton de téléchargement -->
+    <a href="charte-teletravail.pdf" download="/technova/charte-teletravail.pdf" class="btn-teletravail">Télécharger la charte télétravail</a>
                 <ul>
                     <li>Le télétravail est possible jusqu'à 4 jours par semaine.</li>
                     <li>Un espace de travail dédié à la maison est recommandé pour une productivité optimale.</li>
