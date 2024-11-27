@@ -64,6 +64,11 @@
             background-color: #0f172a;
         }
 
+        .sidebar nav a.active {
+            background-color: #1a56db;
+            color: white;
+        }
+
         /* Main content */
         .main {
             margin-left: 250px;
@@ -77,6 +82,25 @@
             color: #1e293b;
             font-size: 28px;
             margin-bottom: 20px;
+        }
+
+        .section-tabs {
+            margin-bottom: 20px;
+        }
+
+        .section-tabs button {
+            background-color: #e2e8f0;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .section-tabs button.active {
+            background-color: #1a56db;
+            color: white;
         }
 
         .formation-card {
@@ -104,21 +128,24 @@
             color: #555;
         }
 
-        .formation-card button {
-            background-color: #3b82f6;
+        /* Green button */
+        .green-button {
+            background-color: #38a169;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 10px 20px;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-bottom: 20px;
         }
 
-        .formation-card button:hover {
-            background-color: #2563eb;
+        .green-button:hover {
+            background-color: #2f855a;
         }
 
-        /* Modal */
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -126,103 +153,106 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
         }
 
         .modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 12px;
-            width: 50%;
-            max-width: 600px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border: 4px solid #2563eb;
-            text-align: left;
-            animation: fadeIn 0.3s ease-out;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .modal-content h3 {
-            margin: 0 0 15px;
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #1e293b;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .modal-header .close {
+            background: transparent;
+            border: none;
+            color: white;
             font-size: 24px;
-            color: #1e293b;
+            cursor: pointer;
         }
 
-        .modal-content p {
-            margin: 0 0 10px;
-            font-size: 16px;
-            color: #374151;
+        .modal-body {
+            flex: 1;
+            padding: 10px;
+            overflow: auto;
         }
 
-        .modal-content button {
-            background-color: #3b82f6;
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .modal-footer {
+            padding: 10px;
+            text-align: right;
+        }
+
+        .fullscreen-btn {
+            background-color: #3182ce;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 10px 20px;
+            font-size: 14px;
             border-radius: 5px;
             cursor: pointer;
             margin-right: 10px;
             transition: background-color 0.3s ease;
         }
 
-        .modal-content button:hover {
-            background-color: #2563eb;
+        .fullscreen-btn:hover {
+            background-color: #2b6cb0;
         }
-
-        .close-btn {
-            background-color: #ef4444;
-        }
-
-        .close-btn:hover {
-            background-color: #dc2626;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .sidebar nav a.active {
-  background-color: #1a56db; /* Couleur de fond bleue pour l'élément actif */
-  color: white; /* Texte blanc pour l'élément actif */
-	}
-	
-	 /* Avatar section */
-        .avatar-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 20px;
+         /* Avatar section */
+    .avatar-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
-        .avatar-container img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
+    .avatar-container img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
     }
 
-        .avatar-container span {
-            font-size: 18px;
-            color: #333;
+    .avatar-container span {
+      font-size: 18px;
+      color: #333;
     }
     </style>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <h2>TechNova Intranet</h2>
-      <nav>
-         <a href="/technova/index.html">Accueil</a>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>TechNova Intranet</h2>
+            <nav>
+        <a href="/technova/index.html">Accueil</a>
         <a href="/technova/ressourcesrh.html">Ressources RH</a>
         <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
         <a href="/technova/formation.html" class="active">Formation</a>
@@ -230,147 +260,127 @@
         <a href="/technova/bienetre.html">Bien-être</a>
         <a href="/technova/evenements.html">Événements</a>
         <a href="/technova/feedback.html">Feedback</a>
-      </nav>
-      <div class="footer">
-        © 2024 TechNova
-      </div>
-    </div>
+        <a href="/technova/temoignages.html">Derniers témoignages</a>
+            </nav>
+            <div class="footer">
+                © 2024 TechNova
+            </div>
+        </div>
 
         <!-- Main Content -->
         <div class="main">
-         <!-- User avatar and name -->
-            <div class="avatar-container">
-                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
-                <span>Valentin (Manager)</span>
-            </div>
+        <!-- User avatar and name -->
+      <div class="avatar-container">
+        <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+        <span>Valentin (Manager)</span>
+      </div>
             <h1>Catalogue de formations</h1>
-            <!-- Formation Cards -->
-            <div class="formation-card">
-                <h4>Formation leadership</h4>
-                <p>Apprenez à diriger avec confiance et stratégie.</p>
-                <button onclick="openModal('leadership')">En savoir plus</button>
+
+            <!-- Button to open modal -->
+            <button class="green-button" onclick="openModal()">Consulter le fichier Excel</button>
+
+            <!-- Section Tabs -->
+            <div class="section-tabs">
+                <button class="active" onclick="showSection('managers')">Formations pour managers</button>
+                <button onclick="showSection('collaborateurs')">Formations pour collaborateurs</button>
             </div>
-            <div class="formation-card">
-                <h4>Développement web</h4>
-                <p>Maîtrisez les bases et les frameworks modernes.</p>
-                <button onclick="openModal('webdev')">En savoir plus</button>
+
+            <!-- Sections -->
+            <div id="managers" class="section">
+                <div class="formation-card">
+                    <h4>Gestion des équipes et management à distance</h4>
+                    <p>Public cible : 150 managers<br>Modalités : Distanciel<br>Durée : 2 jours<br>Organisation : 15 groupes de 10 managers sur 10 semaines.</p>
+                    <p>Objectif : Former les managers aux bonnes pratiques de gestion et d’encadrement en télétravail.</p>
+                </div>
             </div>
-            <div class="formation-card">
-                <h4>Gestion de projet</h4>
-                <p>Améliorez vos compétences en gestion d'équipe et de projet.</p>
-                <button onclick="openModal('projet')">En savoir plus</button>
+
+            <div id="collaborateurs" class="section" style="display: none;">
+                <div class="formation-card">
+                    <h4>Utilisation des outils numériques</h4>
+                    <p>Public cible : 200 collaborateurs et managers<br>Modalités : Distanciel<br>Durée : 2 jours<br>Organisation : 20 groupes de 10 personnes sur 8 semaines.</p>
+                    <p>Objectif : Apprendre à utiliser efficacement les outils collaboratifs pour améliorer la productivité en télétravail.</p>
+                </div>
+                <div class="formation-card">
+                    <h4>3h chrono : planification et organisation en télétravail</h4>
+                    <p>Public cible : 150 collaborateurs (hors managers)<br>Modalités : Distanciel<br>Durée : 3 heures<br>Organisation : 15 groupes de 10 personnes sur 4 semaines.</p>
+                    <p>Objectif : Former à une meilleure gestion du temps et des priorités en distanciel.</p>
+                </div>
+                <div class="formation-card">
+                    <h4>Bien-être et productivité des collaborateurs</h4>
+                    <p>Public cible : 200 collaborateurs<br>Modalités : Distanciel<br>Durée : 1 jour<br>Organisation : 10 groupes de 20 personnes sur 4 semaines.</p>
+                    <p>Objectif : Promouvoir un équilibre entre bien-être et productivité.</p>
+                </div>
             </div>
-            <div class="formation-card">
-    <h4>Communication interpersonnelle</h4>
-    <p>Développez vos compétences pour des échanges efficaces.</p>
-    <button onclick="openModal('communication')">En savoir plus</button>
-</div>
-<div class="formation-card">
-    <h4>Analyse de données</h4>
-    <p>Apprenez à exploiter les données pour des décisions éclairées.</p>
-    <button onclick="openModal('data')">En savoir plus</button>
-</div>
-<div class="formation-card">
-    <h4>Créativité et innovation</h4>
-    <p>Stimulez votre imagination pour résoudre des problèmes complexes.</p>
-    <button onclick="openModal('creativite')">En savoir plus</button>
-</div>
-<div class="formation-card">
-    <h4>Résolution de conflits</h4>
-    <p>Acquérez des techniques pour gérer et désamorcer les tensions.</p>
-    <button onclick="openModal('conflit')">En savoir plus</button>
-</div>
-<div class="formation-card">
-    <h4>Gestion du temps</h4>
-    <p>Améliorez votre productivité en optimisant vos priorités.</p>
-    <button onclick="openModal('temps')">En savoir plus</button>
-</div>
-            <!-- Add more formations as needed -->
         </div>
     </div>
 
-    <!-- Modals -->
-    <div id="leadership" class="modal">
+    <!-- Modal -->
+    <div class="modal" id="excelModal">
         <div class="modal-content">
-            <h3>Formation leadership</h3>
-            <p>Durée : 3 jours<br>Date de début : 5 décembre 2024<br>Participants : 15 inscrits</p>
-            <p>Apprenez à motiver, diriger et inspirer vos équipes.</p>
-            <button class="close-btn" onclick="closeModal('leadership')">Fermer</button>
-            <button>S'inscrire</button>
+            <div class="modal-header">
+                <h2>Fichier Excel modifiable</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://docs.google.com/spreadsheets/d/1WlcU1NgfjokZrzK6wLSNPNoWl6F3NORL/edit?usp=sharing&ouid=117891218350907329185&rtpof=true&sd=true"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button class="fullscreen-btn" onclick="goFullscreen()">Plein écran</button>
+                <button class="fullscreen-btn" onclick="closeModal()">Fermer</button>
+            </div>
         </div>
     </div>
-    <div id="webdev" class="modal">
-        <div class="modal-content">
-            <h3>Développement web</h3>
-            <p>Durée : 5 jours<br>Date de début : 12 décembre 2024<br>Participants : 20 inscrits</p>
-            <p>Découvrez les outils modernes pour créer des sites web performants.</p>
-            <button class="close-btn" onclick="closeModal('webdev')">Fermer</button>
-            <button>S'inscrire</button>
-        </div>
-    </div>
-    <div id="projet" class="modal">
-        <div class="modal-content">
-            <h3>Gestion de projet</h3>
-            <p>Durée : 4 jours<br>Date de début : 15 décembre 2024<br>Participants : 12 inscrits</p>
-            <p>Améliorez vos compétences en gestion de projet et leadership.</p>
-            <button class="close-btn" onclick="closeModal('projet')">Fermer</button>
-            <button>S'inscrire</button>
-        </div>
-    </div>
-<div id="communication" class="modal">
-    <div class="modal-content">
-        <h3>Communication interpersonnelle</h3>
-        <p>Durée : 2 jours<br>Date de début : 8 décembre 2024<br>Participants : 10 inscrits</p>
-        <p>Maîtrisez les outils pour établir des relations solides et une meilleure communication.</p>
-        <button class="close-btn" onclick="closeModal('communication')">Fermer</button>
-        <button>S'inscrire</button>
-    </div>
-</div>
-<div id="data" class="modal">
-    <div class="modal-content">
-        <h3>Analyse de données</h3>
-        <p>Durée : 5 jours<br>Date de début : 10 décembre 2024<br>Participants : 18 inscrits</p>
-        <p>Apprenez à collecter, analyser et visualiser des données pour des prises de décision éclairées.</p>
-        <button class="close-btn" onclick="closeModal('data')">Fermer</button>
-        <button>S'inscrire</button>
-    </div>
-</div>
-<div id="creativite" class="modal">
-    <div class="modal-content">
-        <h3>Créativité et innovation</h3>
-        <p>Durée : 3 jours<br>Date de début : 14 décembre 2024<br>Participants : 16 inscrits</p>
-        <p>Explorez des techniques innovantes pour libérer votre potentiel créatif.</p>
-        <button class="close-btn" onclick="closeModal('creativite')">Fermer</button>
-        <button>S'inscrire</button>
-    </div>
-</div>
-<div id="conflit" class="modal">
-    <div class="modal-content">
-        <h3>Résolution de conflits</h3>
-        <p>Durée : 2 jours<br>Date de début : 20 décembre 2024<br>Participants : 12 inscrits</p>
-        <p>Développez des compétences pour gérer les conflits avec assurance et diplomatie.</p>
-        <button class="close-btn" onclick="closeModal('conflit')">Fermer</button>
-        <button>S'inscrire</button>
-    </div>
-</div>
-<div id="temps" class="modal">
-    <div class="modal-content">
-        <h3>Gestion du temps</h3>
-        <p>Durée : 1 jour<br>Date de début : 22 décembre 2024<br>Participants : 8 inscrits</p>
-        <p>Apprenez à prioriser et à gérer efficacement votre temps pour atteindre vos objectifs.</p>
-        <button class="close-btn" onclick="closeModal('temps')">Fermer</button>
-        <button>S'inscrire</button>
-    </div>
-</div>
-
 
     <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
+        function openModal() {
+            document.getElementById('excelModal').style.display = 'flex';
         }
 
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
+        function closeModal() {
+    // Quitter le mode plein écran si actif
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else if (document.webkitFullscreenElement) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.mozFullScreenElement) { /* Firefox */
+        document.mozCancelFullScreen();
+    } else if (document.msFullscreenElement) { /* IE/Edge */
+        document.msExitFullscreen();
+    }
+
+    // Fermer la modale
+    document.getElementById('excelModal').style.display = 'none';
+}
+
+
+        function goFullscreen() {
+            const modalContent = document.querySelector('.modal-content');
+            if (modalContent.requestFullscreen) {
+                modalContent.requestFullscreen();
+            } else if (modalContent.mozRequestFullScreen) { /* Firefox */
+                modalContent.mozRequestFullScreen();
+            } else if (modalContent.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                modalContent.webkitRequestFullscreen();
+            } else if (modalContent.msRequestFullscreen) { /* IE/Edge */
+                modalContent.msRequestFullscreen();
+            }
+        }
+
+        function showSection(section) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((sec) => {
+                sec.style.display = 'none';
+            });
+
+            document.getElementById(section).style.display = 'block';
+
+            const buttons = document.querySelectorAll('.section-tabs button');
+            buttons.forEach((button) => {
+                button.classList.remove('active');
+            });
+
+            const activeButton = document.querySelector(`button[onclick="showSection('${section}')"]`);
+            activeButton.classList.add('active');
         }
     </script>
 </body>
