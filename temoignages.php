@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Témoignage de Sonia, Commerciale - TechNova</title>
+  <style>
+    /* Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1e293b; /* Dark blue */
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a; /* Slightly darker */
+      margin: 0;
+    }
+
+    .sidebar nav {
+      flex-grow: 1;
+    }
+
+    .sidebar nav a {
+      text-decoration: none;
+      color: white;
+      padding: 15px 20px;
+      display: block;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #1a56db; /* Darker blue on hover */
+    }
+
+    .sidebar nav a.active {
+      background-color: #1a56db; /* Blue for active link */
+      color: white;
+    }
+
+    .sidebar .footer {
+      padding: 10px 20px;
+      font-size: 12px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    .sidebar nav a.exclu {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar nav a.exclu .badge {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      background-color: #f43f5e; /* Pinkish color */
+      color: white;
+      padding: 5px 10px;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      background-color: #f9fafb; /* Light grey background */
+      min-height: 100vh;
+    }
+
+    .main h1 {
+      color: #1e293b;
+      text-align: center;
+    }
+
+    .main h2 {
+      color: #1e293b;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .main p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Features section */
+    .features {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .feature {
+      flex: 1;
+      margin: 10px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .feature img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      color: #1e293b;
+      margin: 10px 0;
+    }
+
+    .feature p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Video Embed */
+    .video-section {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-section video {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+    }
+
+    .cta-btn {
+      background-color: #3b82f6; /* Bright blue */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: block;
+      width: fit-content;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .cta-btn:hover {
+      background-color: #2563eb; /* Darker blue */
+    }
+        /* Avatar section */
+        .avatar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .avatar-container span {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* List */
+        .requests-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .requests-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .requests-list li .request-info {
+            flex-grow: 1;
+        }
+
+        /* Section specific styles */
+        .request-details {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .request-details span {
+            font-weight: bold;
+        }
+         .sidebar nav a.active {
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>TechNova Intranet</h2>
+      <nav>
+      	<a href="/technova/temoignages.html" class="exclu">EXCLU - Derniers témoignages <span class="badge">NOUVEAU</span></a>
+        <a href="/technova/index.html">Accueil</a>
+        <a href="/technova/ressourcesrh.html">Ressources RH</a>
+        <a href="/technova/espacemanagers.html">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/technova/formation.html">Formation</a>
+        <a href="/technova/outils.html">Outils & Technologies</a>
+        <a href="/technova/bienetre.html">Bien-être</a>
+        <a href="/technova/evenements.html">Événements</a>
+        <a href="/technova/feedback.html">Feedback</a>
+      </nav>
+      <div class="footer">
+        © 2024 TechNova
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="avatar-container">
+        <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&s=40" alt="Avatar">
+        <span>Valentin (Manager)</span>
+      </div>
+
+      <h1>Témoignage de Sonia, commerciale</h1>
+      
+      <!-- Introduction Text -->
+      <p>Dans cette vidéo exclusive, Sonia, notre brillante commerciale, partage son expérience sur la façon dont TechNova a révolutionné sa manière de travailler, même à distance. Découvrez son témoignage et son point de vue sur l'impact du télétravail et des outils mis en place pour faciliter son quotidien.</p>
+
+      <div class="video-section">
+        <h2>Vidéo du témoignage</h2>
+        <!-- MP4 Video -->
+        <video controls autoplay muted>
+          <source src="/technova/sonia.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéos MP4.
+        </video>
+      </div>
+
+      <!-- Additional Content -->
+      <section>
+        <h2>Un regard sur le télétravail</h2>
+        <p>Grâce à notre environnement de travail flexible et aux outils que nous mettons à disposition, nos collaborateurs comme Sonia peuvent travailler efficacement depuis n'importe où. Découvrez dans cette section comment nos solutions améliorent la productivité et la communication.</p>
+
+        <h2>Les outils qui facilitent le travail de Sonia</h2>
+        <p>De la gestion des clients à la coordination avec l'équipe, Sonia utilise des outils spécialement conçus pour simplifier sa journée de travail. Ces outils permettent une meilleure organisation et une communication fluide avec toute l'équipe.</p>
+
+        <h2>Des témoignages inspirants</h2>
+        <p>Chaque témoignage partagé sur notre intranet met en avant les défis rencontrés et les solutions apportées. Ces histoires inspirent l'ensemble de notre équipe et renforcent notre culture d'innovation continue.</p>
+        
+        <div class="cta-btn">Découvrez plus de témoignages</div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
