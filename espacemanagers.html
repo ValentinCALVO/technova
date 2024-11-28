@@ -337,20 +337,23 @@
 </head>
 
 <body>
+ <div class="container" id="main-content" style="display:none;">
+    <!-- Sidebar et contenu de la page ici... -->
+  </div>
   <div class="container">
     <!-- Sidebar -->
     <div class="sidebar">
       <h2>TechNova Intranet</h2>
       <nav>
-       <a href="/technova/index.html">Accueil</a>
-        <a href="/technova/ressourcesrh.html">Ressources RH</a>
-        <a href="/technova/espacemanagers.html" class="active">Espace Managers <font size="1pt">(Droits requis)</font></a>
-        <a href="/technova/formation.html">Formation</a>
-        <a href="/technova/outils.html">Outils & Technologies</a>
-        <a href="/technova/bienetre.html">Bien-être</a>
-        <a href="/technova/evenements.html">Événements</a>
-        <a href="/technova/feedback.html">Feedback</a>
-        <a href="/technova/temoignages.html">Derniers témoignages</a>
+        <a href="/index.php">Accueil</a>
+        <a href="/ressourcesrh.php">Ressources RH</a>
+        <a href="/espacemanagers.php" class="active">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/formation.php">Formation</a>
+        <a href="/outils.php">Outils & Technologies</a>
+        <a href="/bienetre.php">Bien-être</a>
+        <a href="/evenements.php">Événements</a>
+        <a href="/feedback.php">Feedback</a>
+        <a href="/temoignages.php">Derniers témoignages</a>
       </nav>
       <div class="footer">
         © 2024 TechNova
@@ -603,6 +606,26 @@
             const activeButton = document.querySelector(`button[onclick="showSection('${section}')"]`);
             activeButton.classList.add('active');
         }
+          // Fonction qui demande le mot de passe à l'utilisateur
+    function requestPassword() {
+      // Demander le mot de passe via un prompt
+      var password = prompt("Veuillez entrer le mot de passe :");
+
+      // Vérifier si le mot de passe est correct
+      if (password === "admin") {
+        // Si correct, afficher le contenu de la page
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        // Sinon, fermer la page
+        alert("Mot de passe incorrect. Vous allez être redirigé.");
+        window.location.href = "/index.php";  // Rediriger vers une autre page (ex: page d'erreur)
+      }
+    }
+
+   // Demander le mot de passe dès que le DOM est chargé
+document.addEventListener('DOMContentLoaded', function() {
+    requestPassword();
+});
   </script>
 </body>
 
