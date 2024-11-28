@@ -237,6 +237,102 @@
     .step-arrow:hover {
       transform: scale(1.2);
     }
+    /* Green button */
+        .green-button {
+            background-color: #FFA233;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .green-button:hover {
+            background-color: #FFA233;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #1e293b;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .modal-header .close {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            flex: 1;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .modal-footer {
+            padding: 10px;
+            text-align: right;
+        }
+
+        .fullscreen-btn {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: #2b6cb0;
+        }
   </style>
 </head>
 
@@ -246,15 +342,15 @@
     <div class="sidebar">
       <h2>TechNova Intranet</h2>
       <nav>
-         <a href="/technova/index.html">Accueil</a>
-        <a href="/technova/ressourcesrh.html">Ressources RH</a>
-        <a href="/technova/espacemanagers.html" class="active">Espace Managers <font size="1pt">(Droits requis)</font></a>
-        <a href="/technova/formation.html">Formation</a>
-        <a href="/technova/outils.html">Outils & Technologies</a>
-        <a href="/technova/bienetre.html">Bien-être</a>
-        <a href="/technova/evenements.html">Événements</a>
-        <a href="/technova/feedback.html">Feedback</a>
-        <a href="/technova/temoignages.html">Derniers témoignages</a>
+        <a href="/index.php">Accueil</a>
+        <a href="/ressourcesrh.php">Ressources RH</a>
+        <a href="/espacemanagers.php" class="active">Espace Managers <font size="1pt">(Droits requis)</font></a>
+        <a href="/formation.php">Formation</a>
+        <a href="/outils.php">Outils & Technologies</a>
+        <a href="/bienetre.php">Bien-être</a>
+        <a href="/evenements.php">Événements</a>
+        <a href="/feedback.php">Feedback</a>
+        <a href="/temoignages.php">Derniers témoignages</a>
       </nav>
       <div class="footer">
         © 2024 TechNova
@@ -272,6 +368,9 @@
       <h1>Espace Managers</h1>
       <p>Dans cet espace, vous pouvez gérer les demandes de congé, suivre la performance de vos équipes, et bien plus encore.</p>
 
+ 	  <!-- Button to open modal -->
+      <button class="green-button" onclick="openModal()">Accéder au tableau de bord</button>
+            
       <!-- Manager Tools Section -->
       <div class="manager-tools">
         <div class="tool-item" id="approve-conge" onclick="toggleForm('approve-conge-form')">
@@ -420,6 +519,23 @@
         </form>
       </div>
 
+ <!-- Modal -->
+    <div class="modal" id="excelModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Fichier Excel modifiable</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://docs.google.com/spreadsheets/d/10TvcdgVuU6VXjAth2A1Yr72f-skaujox/edit?usp=sharing&ouid=117891218350907329185&rtpof=true&sd=true"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button class="fullscreen-btn" onclick="goFullscreen()">Plein écran</button>
+                <button class="fullscreen-btn" onclick="closeModal()">Fermer</button>
+            </div>
+        </div>
+    </div>
+
   <script>
     function toggleForm(formId) {
       var forms = document.querySelectorAll('.form-container');
@@ -437,6 +553,56 @@
     function rejectLeave(name) {
       alert(name + ' : Congé refusé');
     }
+      function openModal() {
+            document.getElementById('excelModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+    // Quitter le mode plein écran si actif
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else if (document.webkitFullscreenElement) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.mozFullScreenElement) { /* Firefox */
+        document.mozCancelFullScreen();
+    } else if (document.msFullscreenElement) { /* IE/Edge */
+        document.msExitFullscreen();
+    }
+
+    // Fermer la modale
+    document.getElementById('excelModal').style.display = 'none';
+}
+
+
+        function goFullscreen() {
+            const modalContent = document.querySelector('.modal-content');
+            if (modalContent.requestFullscreen) {
+                modalContent.requestFullscreen();
+            } else if (modalContent.mozRequestFullScreen) { /* Firefox */
+                modalContent.mozRequestFullScreen();
+            } else if (modalContent.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                modalContent.webkitRequestFullscreen();
+            } else if (modalContent.msRequestFullscreen) { /* IE/Edge */
+                modalContent.msRequestFullscreen();
+            }
+        }
+
+        function showSection(section) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((sec) => {
+                sec.style.display = 'none';
+            });
+
+            document.getElementById(section).style.display = 'block';
+
+            const buttons = document.querySelectorAll('.section-tabs button');
+            buttons.forEach((button) => {
+                button.classList.remove('active');
+            });
+
+            const activeButton = document.querySelector(`button[onclick="showSection('${section}')"]`);
+            activeButton.classList.add('active');
+        }
   </script>
 </body>
 
