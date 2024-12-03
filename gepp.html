@@ -9,61 +9,73 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
+            background-color: #f8f9fa;
             color: #333;
         }
         .container {
-            width: 85%;
+            width: 90%;
             margin: 0 auto;
-            padding: 40px;
+            padding: 30px;
         }
         h1 {
             text-align: center;
             color: #004080;
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 30px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
         }
         th {
-            background-color: #004080;
+            background-color: #0077b6;
             color: white;
+            font-weight: bold;
             border-bottom: 2px solid #ddd;
         }
         tr:nth-child(even) {
-            background-color: #f8f8f8;
+            background-color: #f2f2f2;
         }
         tr:hover {
-            background-color: #e6f0ff;
+            background-color: #e6f7ff;
         }
         td {
             background-color: #ffffff;
         }
         .category-header {
-            background-color: #f1f1f1;
+            background-color: #e0f7fa;
+            color: #0077b6;
             font-weight: bold;
-            color: #004080;
-            border-top: 2px solid #004080;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px;
+        }
+        .rating {
+            color: #ffcc00;
         }
         .highlight {
-            color: #004080;
             font-weight: bold;
+            color: #004080;
         }
         .cost, .duration {
             color: #0077b6;
         }
         .objective {
-            color: #6c757d;
+            color: #333;
+        }
+        .advantages, .disadvantages {
+            font-size: 12px;
+            color: #555;
+            text-align: left;
+            padding: 5px 0;
         }
     </style>
 </head>
@@ -79,72 +91,99 @@
                     <th>Prestataire</th>
                     <th class="cost">Coût Unitaire</th>
                     <th class="duration">Durée</th>
+                    <th class="rating">Note</th>
                     <th class="objective">Objectif</th>
+                    <th>Avantages</th>
+                    <th>Inconvénients</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="category-header">
-                    <td colspan="5">Formations Obligatoires</td>
+                    <td colspan="8">Formations Obligatoires</td>
                 </tr>
                 <tr>
                     <td>Réglementation Aéronautique</td>
                     <td>Airbus Training Center</td>
                     <td class="cost">1 200 € - 1 500 €</td>
                     <td class="duration">2-3 jours</td>
+                    <td class="rating">⭐⭐⭐⭐⭐</td>
                     <td class="objective">Maîtriser les réglementations pour la maintenance aéronautique</td>
+                    <td class="advantages">Formation certifiée, excellente réputation du prestataire, adaptée aux exigences légales.</td>
+                    <td class="disadvantages">Coût relativement élevé, durée relativement longue pour certains profils.</td>
                 </tr>
                 <tr>
                     <td>Formation Sécurité et Facteurs Humains</td>
                     <td>Air Formation</td>
                     <td class="cost">600 €</td>
                     <td class="duration">1 jour</td>
+                    <td class="rating">⭐⭐⭐⭐</td>
                     <td class="objective">Réduire les risques humains dans les opérations de maintenance</td>
+                    <td class="advantages">Formation courte, bon rapport qualité-prix, adaptée à un large public.</td>
+                    <td class="disadvantages">Peu adaptée aux profils déjà expérimentés, manque de personnalisation.</td>
                 </tr>
                 <tr>
                     <td>Gestion des Émissions et Normes Environnementales</td>
                     <td>Green Aviation Academy</td>
                     <td class="cost">700 €</td>
                     <td class="duration">1-2 jours</td>
+                    <td class="rating">⭐⭐⭐⭐</td>
                     <td class="objective">Former aux normes environnementales ISO 14001</td>
+                    <td class="advantages">Formation adaptée aux enjeux écologiques actuels, bon rapport qualité/prix.</td>
+                    <td class="disadvantages">Formation assez théorique, pas assez d’exemples pratiques.</td>
                 </tr>
                 <tr>
                     <td>Formation Sécurité en Milieu Aéroportuaire</td>
                     <td>Aéroport de Paris Formation</td>
                     <td class="cost">800 €</td>
                     <td class="duration">1 jour</td>
+                    <td class="rating">⭐⭐⭐⭐⭐</td>
                     <td class="objective">Garantir la conformité aux normes de sécurité en milieu aéroportuaire</td>
+                    <td class="advantages">Formateur expert, formation très pratique avec des simulations en conditions réelles.</td>
+                    <td class="disadvantages">Coût élevé pour une journée seulement.</td>
                 </tr>
                 <tr>
                     <td>Sensibilisation à la Transition Hydrogène</td>
                     <td>Safran Training Academy</td>
                     <td class="cost">1 000 €</td>
                     <td class="duration">2-3 jours</td>
+                    <td class="rating">⭐⭐⭐⭐</td>
                     <td class="objective">Former à l’utilisation de l’hydrogène dans l’aéronautique</td>
+                    <td class="advantages">Formation innovante, alignée avec les évolutions technologiques de l’aéronautique.</td>
+                    <td class="disadvantages">Formation encore peu répandue, nécessite un public très ciblé.</td>
                 </tr>
 
                 <tr class="category-header">
-                    <td colspan="5">Formations Techniques</td>
+                    <td colspan="8">Formations Techniques</td>
                 </tr>
                 <tr>
                     <td>Propulsion Hydrogène</td>
                     <td>Safran Corporate University</td>
                     <td class="cost">3 000 €</td>
                     <td class="duration">3 jours</td>
+                    <td class="rating">⭐⭐⭐⭐⭐</td>
                     <td class="objective">Maîtriser la technologie de propulsion hydrogène pour l’aéronautique</td>
+                    <td class="advantages">Formation avancée, prestataire de référence, très bon contenu technique.</td>
+                    <td class="disadvantages">Coût élevé, durée relativement longue.</td>
                 </tr>
                 <tr>
                     <td>Big Data pour l'Aéronautique</td>
                     <td>Dataiku</td>
                     <td class="cost">2 500 €</td>
                     <td class="duration">2 jours</td>
+                    <td class="rating">⭐⭐⭐⭐</td>
                     <td class="objective">Utiliser les Big Data pour optimiser les opérations aéronautiques</td>
+                    <td class="advantages">Formation moderne et en forte demande, adaptée aux enjeux numériques de l'aéronautique.</td>
+                    <td class="disadvantages">Besoin de prérequis en analyse de données, peut être difficile pour les novices.</td>
                 </tr>
                 <tr>
                     <td>Maintenance Prédictive</td>
                     <td>Airbus Digital Maintenance Analytics</td>
                     <td class="cost">2 000 €</td>
                     <td class="duration">3 jours</td>
+                    <td class="rating">⭐⭐⭐⭐⭐</td>
                     <td class="objective">Former à l’utilisation des outils de maintenance prédictive</td>
+                    <td class="advantages">Formation très pratique, bien adaptée aux nouvelles technologies en maintenance.</td>
+                    <td class="disadvantages">Formation assez spécialisée, nécessite un profil technique déjà avancé.</td>
                 </tr>
             </tbody>
         </table>
