@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendrier Global - Plan d'Action GEPP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 1200px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .gantt {
+      display: grid;
+      grid-template-columns: 150px repeat(12, 1fr);
+      border-collapse: collapse;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+
+    .gantt-header div,
+    .gantt-row div {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .gantt-header div {
+      background-color: #004080;
+      color: white;
+      font-weight: bold;
+    }
+
+    .gantt-row div:first-child {
+      background-color: #eaeaea;
+      font-weight: bold;
+    }
+
+    .bar {
+      background-color: #76c7c0;
+      color: white;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .bar.long {
+      background-color: #f4a261;
+    }
+
+    .bar.medium {
+      background-color: #2a9d8f;
+    }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Calendrier Global du Plan d'Action GEPP</h1>
+</header>
+<div class="container">
+  <p><strong>Phases clés :</strong> Les actions sont réparties sur 36 mois avec des jalons spécifiques pour assurer le suivi.</p>
+  <div class="gantt">
+    <!-- Header -->
+    <div></div>
+    <div>Jan-Mars</div>
+    <div>Avr-Juin</div>
+    <div>Juil-Sept</div>
+    <div>Oct-Déc</div>
+    <div>Jan-Mars</div>
+    <div>Avr-Juin</div>
+    <div>Juil-Sept</div>
+    <div>Oct-Déc</div>
+    <div>Jan-Mars</div>
+    <div>Avr-Juin</div>
+    <div>Juil-Sept</div>
+    <div>Oct-Déc</div>
+    <!-- Row 1 -->
+    <div>Audit des compétences</div>
+    <div class="bar">Audit</div>
+    <div class="bar"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- Row 2 -->
+    <div>Formations pilotes</div>
+    <div></div>
+    <div class="bar medium">Hydrogène</div>
+    <div class="bar medium">Big Data</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- Row 3 -->
+    <div>Généralisation des formations</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="bar long">Généralisation</div>
+    <div class="bar long"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- Row 4 -->
+    <div>Mise en place du mentorat</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="bar">Déploiement</div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- Row 5 -->
+    <div>Ajustements annuels</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="bar">Suivi</div>
+    <div></div>
+    <div class="bar">Pérennisation</div>
+    <div></div>
+    <div class="bar">Évaluation</div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<footer>
+  <p>© 2024 Journey - Plan d'Action GEPP</p>
+</footer>
+</body>
+</html>
