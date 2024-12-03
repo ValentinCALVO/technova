@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budget Global - Plan d'Action GEPP</title>
+  <title>Budget Global Plan d'Action GEPP</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -60,7 +60,7 @@
 
     .obligatoire-row {
       background-color: #e63946;
-      color: white; /* Texte blanc pour assurer un bon contraste */
+      color: white;
       font-weight: bold;
     }
 
@@ -75,30 +75,6 @@
       text-align: right;
     }
 
-    .legend {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .legend-box {
-      width: 20px;
-      height: 20px;
-      border-radius: 3px;
-    }
-
-    .audit { background-color: #76c7c0; }
-    .formation { background-color: #f4a261; }
-    .mentorat { background-color: #2a9d8f; }
-    .obligatoire { background-color: #e63946; }
-
     footer {
       margin-top: 30px;
       text-align: center;
@@ -111,75 +87,92 @@
   <div class="container">
     <div class="title">Budget Global - Plan d'Action GEPP</div>
     <div class="subtitle">Détail des dépenses prévues sur 3 ans</div>
+    
     <table class="budget-table">
       <tr>
         <th>Catégorie</th>
-        <th>Détail</th>
-        <th>Coût estimé (€)</th>
+        <th>Coût unitaire</th>
+        <th>Objectif</th>
+        <th>Nombre de personnes</th>
+        <th>Coût total estimé</th>
       </tr>
+
+      <!-- Formations Obligatoires -->
       <tr class="category-row">
-        <td>Audit et Cartographie</td>
-        <td>Outils spécialisés et consultants</td>
-        <td class="highlight">20,000</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Workshops et ateliers internes</td>
-        <td>10,000</td>
-      </tr>
-      <tr class="category-row">
-        <td>Formations techniques</td>
-        <td>Hydrogène pour 300 collaborateurs</td>
-        <td class="highlight">800,000</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Big Data, IA et éco-pilotage</td>
-        <td>700,000</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Formations avancées pour experts</td>
-        <td>50,000</td>
+        <td colspan="5"><strong>Formations Obligatoires</strong></td>
       </tr>
       <tr class="obligatoire-row">
-        <td>Formations obligatoires</td>
-        <td>Réglementaires pour 750 collaborateurs</td>
-        <td class="highlight">2,000,000</td>
+        <td>Réglementation aéronautique</td>
+        <td>1 200 € - 1 500 €</td>
+        <td>Maîtriser les réglementations pour la maintenance</td>
+        <td>750</td>
+        <td>~1 125 000 €</td>
       </tr>
+      <tr class="obligatoire-row">
+        <td>Formation Sécurité et Facteurs Humains</td>
+        <td>600 €</td>
+        <td>Réduire les risques humains dans la maintenance</td>
+        <td>750</td>
+        <td>~450 000 €</td>
+      </tr>
+      <tr class="obligatoire-row">
+        <td>Gestion des émissions et normes environnementales</td>
+        <td>700 €</td>
+        <td>Comprendre les nouvelles réglementations environnementales</td>
+        <td>750</td>
+        <td>~525 000 €</td>
+      </tr>
+      <tr class="obligatoire-row">
+        <td>Formation Sécurité en Milieu Aéroportuaire</td>
+        <td>800 €</td>
+        <td>Garantir le respect des normes de sécurité</td>
+        <td>750</td>
+        <td>~600 000 €</td>
+      </tr>
+      <tr class="obligatoire-row">
+        <td>Sensibilisation à la Transition Hydrogène</td>
+        <td>1 000 €</td>
+        <td>Former à l’utilisation de l’hydrogène</td>
+        <td>750</td>
+        <td>~750 000 €</td>
+      </tr>
+
+      <!-- Formations Techniques -->
       <tr class="category-row">
-        <td>Mentorat</td>
-        <td>Développement et formation des mentors</td>
-        <td class="highlight">35,000</td>
+        <td colspan="5"><strong>Formations Techniques</strong></td>
       </tr>
       <tr>
-        <td></td>
-        <td>Suivi et ajustements</td>
-        <td>15,000</td>
-      </tr>
-      <tr class="category-row">
-        <td>Outils et Suivi</td>
-        <td>Plateforme digitale pour gestion RH</td>
-        <td class="highlight">50,000</td>
+        <td>Propulsion Hydrogène</td>
+        <td>3 000 €</td>
+        <td>Former à la propulsion hydrogène</td>
+        <td>250</td>
+        <td>~750 000 €</td>
       </tr>
       <tr>
-        <td></td>
-        <td>Rapports annuels et maintenance</td>
-        <td>20,000</td>
+        <td>Big Data pour l'Aéronautique</td>
+        <td>2 500 €</td>
+        <td>Former à l'utilisation des Big Data dans l'aéronautique</td>
+        <td>200</td>
+        <td>~500 000 €</td>
       </tr>
+      <tr>
+        <td>Maintenance Prédictive</td>
+        <td>2 000 €</td>
+        <td>Former à la maintenance prédictive</td>
+        <td>300</td>
+        <td>~600 000 €</td>
+      </tr>
+
+      <!-- Total -->
       <tr class="total-row">
-        <td colspan="2">Total Général</td>
-        <td class="highlight">3,700,000</td>
+        <td colspan="4"><strong>Total des Formations</strong></td>
+        <td><strong>~5 350 000 €</strong></td>
       </tr>
     </table>
-
-    <div class="legend">
-      <div class="legend-item"><div class="legend-box audit"></div>Audit</div>
-      <div class="legend-item"><div class="legend-box formation"></div>Formations techniques</div>
-      <div class="legend-item"><div class="legend-box obligatoire"></div>Formations obligatoires</div>
-      <div class="legend-item"><div class="legend-box mentorat"></div>Mentorat</div>
-    </div>
-    <footer>© 2024 Journey - Plan d'Action GEPP</footer>
+    
+    <footer>
+      <p>Source: Estimation des coûts de formation, sur la base des devis des prestataires et du nombre de collaborateurs à former.</p>
+    </footer>
   </div>
 </body>
 </html>
