@@ -1,120 +1,145 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budget Global Formation</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f8f8f8;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      color: #2C3E50;
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    .budget-table {
-      width: 100%;
-      margin: 20px 0;
-      border-collapse: collapse;
-    }
-
-    .budget-table th, .budget-table td {
-      border: 1px solid #BDC3C7;
-      padding: 10px;
-      text-align: left;
-    }
-
-    .budget-table th {
-      background-color: #2980B9;
-      color: white;
-    }
-
-    .budget-table td {
-      font-size: 1.1em;
-    }
-
-    .highlight {
-      color: #2980B9;
-      font-weight: bold;
-    }
-
-    .budget-header {
-      margin-bottom: 30px;
-    }
-
-    .sub-header {
-      font-weight: bold;
-      font-size: 1.2em;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Global - Plan d'Action GEPP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #004080;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        th {
+            background-color: #004080;
+            color: white;
+        }
+        .category-row {
+            background-color: #e8eaf6;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #004080;
+            font-weight: bold;
+        }
+        .total-row {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Budget Global Formation</h1>
 
-    <div class="budget-header">
-      <p>Le plan de formation pour Journey sur 3 ans inclut les formations obligatoires et techniques, ainsi que d'autres dépenses pour l'accompagnement des employés.</p>
+    <div class="container">
+        <h1>Budget Global - Plan d'Action GEPP</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                    <th>Coût Total Estimé</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Formations Obligatoires -->
+                <tr class="category-row">
+                    <td colspan="2"><strong>Formations Obligatoires</strong></td>
+                </tr>
+                <tr>
+                    <td>Réglementation aéronautique</td>
+                    <td>~1 125 000 €</td>
+                </tr>
+                <tr>
+                    <td>Formation Sécurité et Facteurs Humains</td>
+                    <td>~450 000 €</td>
+                </tr>
+                <tr>
+                    <td>Gestion des émissions et normes environnementales</td>
+                    <td>~525 000 €</td>
+                </tr>
+                <tr>
+                    <td>Formation Sécurité en Milieu Aéroportuaire</td>
+                    <td>~600 000 €</td>
+                </tr>
+                <tr>
+                    <td>Sensibilisation à la Transition Hydrogène</td>
+                    <td>~750 000 €</td>
+                </tr>
+
+                <!-- Formations Techniques -->
+                <tr class="category-row">
+                    <td colspan="2"><strong>Formations Techniques</strong></td>
+                </tr>
+                <tr>
+                    <td>Propulsion Hydrogène</td>
+                    <td>~750 000 €</td>
+                </tr>
+                <tr>
+                    <td>Big Data pour l'Aéronautique</td>
+                    <td>~500 000 €</td>
+                </tr>
+                <tr>
+                    <td>Maintenance Prédictive</td>
+                    <td>~600 000 €</td>
+                </tr>
+
+                <!-- Autres Dépenses -->
+                <tr class="category-row">
+                    <td colspan="2"><strong>Autres Dépenses</strong></td>
+                </tr>
+                <tr>
+                    <td>Audit et Cartographie des Compétences</td>
+                    <td>~100 000 €</td>
+                </tr>
+                <tr>
+                    <td>Workshops et Séminaires</td>
+                    <td>~50 000 €</td>
+                </tr>
+                <tr>
+                    <td>Outils & Technologies pour la formation</td>
+                    <td>~200 000 €</td>
+                </tr>
+                <tr>
+                    <td>Recrutement (350 personnes)</td>
+                    <td>~1 750 000 €</td>
+                </tr>
+                <tr>
+                    <td>Salaire des nouveaux recrutés</td>
+                    <td>~10 500 000 €</td>
+                </tr>
+
+                <!-- Total -->
+                <tr class="total-row">
+                    <td><strong>Total estimé sur 3 ans</strong></td>
+                    <td><strong>~15 000 000 €</strong></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <table class="budget-table">
-      <thead>
-        <tr>
-          <th>Dépenses</th>
-          <th>Coût estimé</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Formations Obligatoires</strong> (750 collaborateurs)</td>
-          <td class="highlight">2,000,000 €</td>
-        </tr>
-        <tr>
-          <td><strong>Formations Techniques</strong> (750 collaborateurs)</td>
-          <td class="highlight">1,500,000 €</td>
-        </tr>
-        <tr>
-          <td><strong>Audit & Cartographie des compétences</strong></td>
-          <td class="highlight">100,000 €</td>
-        </tr>
-        <tr>
-          <td><strong>Workshop & Sensibilisation</strong></td>
-          <td class="highlight">150,000 €</td>
-        </tr>
-        <tr>
-          <td><strong>Suivi et évaluation continue</strong></td>
-          <td class="highlight">100,000 €</td>
-        </tr>
-        <tr>
-          <td><strong>Total</strong></td>
-          <td class="highlight">3,850,000 €</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="sub-header">
-      Détails des formations :
-    </div>
-    <p><strong>Formations Obligatoires :</strong> Règlementation, Sécurité, Émissions, Transition Hydrogène.</p>
-    <p><strong>Formations Techniques :</strong> Propulsion Hydrogène, Big Data, Maintenance Prédictive.</p>
-
-  </div>
 </body>
 </html>
