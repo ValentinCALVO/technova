@@ -3,52 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau Comparatif des Formations</title>
+    <title>Calendrier des Formations</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
         }
         .container {
             width: 95%;
-            margin: 0 auto;
+            margin: auto;
+            padding: 20px;
             background-color: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 20px;
         }
         h1 {
             text-align: center;
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
+            color: #004080;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
         th {
-            background-color: #6c63ff;
+            background-color: #004080;
             color: white;
-            padding: 15px;
-            text-align: center;
+            padding: 12px;
             font-size: 14px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        th:first-child {
-            border-top-left-radius: 10px;
-        }
-        th:last-child {
-            border-top-right-radius: 10px;
         }
         td {
-            padding: 15px;
             text-align: center;
+            padding: 10px;
             font-size: 12px;
-            color: #333;
+            border: 1px solid #ddd;
         }
         tr:nth-child(even) {
             background-color: #f3f4fa;
@@ -56,121 +46,107 @@
         tr:hover {
             background-color: #e0e7ff;
         }
-        .category-row {
-            background-color: #b3c7ff;
-            color: #333;
+        .highlight {
             font-weight: bold;
-            font-size: 14px;
+            color: #004080;
         }
-        .cost {
-            color: #28a745;
-            font-weight: bold;
-        }
-        .rating {
-            font-weight: bold;
-            color: #ffcc00;
-        }
-        .duration {
-            color: #6c757d;
-        }
-        .objective {
-            font-style: italic;
-        }
-        .advantages, .disadvantages {
-            text-align: left;
+        .notes {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Tableau Comparatif des Formations et Prestataires</h1>
+        <h1>Calendrier des Formations Obligatoires - Année 2024</h1>
 
         <table>
             <thead>
                 <tr>
+                    <th>Date</th>
                     <th>Formation</th>
-                    <th>Prestataire</th>
-                    <th>Coût Unitaire</th>
-                    <th>Durée</th>
-                    <th>Note</th>
-                    <th>Objectif</th>
-                    <th>Avantages</th>
-                    <th>Inconvénients</th>
+                    <th>Heure</th>
+                    <th>Lieu</th>
+                    <th>Participants</th>
+                    <th>Formateur</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Formations Obligatoires -->
-                <tr class="category-row">
-                    <td colspan="8">Formations Obligatoires</td>
+                <!-- Janvier -->
+                <tr class="highlight">
+                    <td colspan="6">Janvier</td>
                 </tr>
                 <tr>
+                    <td>15/01/2024</td>
                     <td>Réglementation Aéronautique</td>
+                    <td>9h - 12h</td>
+                    <td>Salle A, Site Principal</td>
+                    <td>Jean Dupont, Marie Leroy, Paul Martin</td>
                     <td>Airbus Training Center</td>
-                    <td class="cost">1 200 € - 1 500 €</td>
-                    <td class="duration">2-3 jours</td>
-                    <td class="rating">⭐⭐⭐⭐⭐</td>
-                    <td class="objective">Maîtriser les réglementations pour la maintenance</td>
-                    <td class="advantages">Formation certifiée, adaptée aux normes légales.</td>
-                    <td class="disadvantages">Coût élevé pour certains budgets.</td>
                 </tr>
                 <tr>
-                    <td>Formation Sécurité et Facteurs Humains</td>
+                    <td>20/01/2024</td>
+                    <td>Facteurs Humains</td>
+                    <td>14h - 17h</td>
+                    <td>Salle B, Site Principal</td>
+                    <td>Anna Morel, Marc Bernard, Julie Lefèvre</td>
                     <td>Air Formation</td>
-                    <td class="cost">600 €</td>
-                    <td class="duration">1 jour</td>
-                    <td class="rating">⭐⭐⭐⭐</td>
-                    <td class="objective">Réduire les risques humains dans la maintenance</td>
-                    <td class="advantages">Durée courte, prix abordable.</td>
-                    <td class="disadvantages">Peu adaptée à un public expérimenté.</td>
-                </tr>
-                <tr>
-                    <td>Normes Environnementales</td>
-                    <td>Green Aviation Academy</td>
-                    <td class="cost">700 €</td>
-                    <td class="duration">1-2 jours</td>
-                    <td class="rating">⭐⭐⭐⭐</td>
-                    <td class="objective">Conformité aux normes environnementales</td>
-                    <td class="advantages">En phase avec les enjeux écologiques.</td>
-                    <td class="disadvantages">Formation relativement théorique.</td>
                 </tr>
 
-                <!-- Formations Techniques -->
-                <tr class="category-row">
-                    <td colspan="8">Formations Techniques</td>
+                <!-- Février -->
+                <tr class="highlight">
+                    <td colspan="6">Février</td>
                 </tr>
                 <tr>
-                    <td>Propulsion Hydrogène</td>
-                    <td>Safran Corporate University</td>
-                    <td class="cost">3 000 €</td>
-                    <td class="duration">3 jours</td>
-                    <td class="rating">⭐⭐⭐⭐⭐</td>
-                    <td class="objective">Découvrir les technologies de propulsion à hydrogène</td>
-                    <td class="advantages">Formation innovante et pratique.</td>
-                    <td class="disadvantages">Coût très élevé.</td>
+                    <td>05/02/2024</td>
+                    <td>Gestion des Normes Environnementales</td>
+                    <td>9h - 12h</td>
+                    <td>Salle A, Site Principal</td>
+                    <td>Clara Dubois, Olivier Garnier, Sophie Petit</td>
+                    <td>Green Aviation Academy</td>
                 </tr>
                 <tr>
-                    <td>Big Data pour l'Aéronautique</td>
-                    <td>Dataiku</td>
-                    <td class="cost">2 500 €</td>
-                    <td class="duration">2 jours</td>
-                    <td class="rating">⭐⭐⭐⭐</td>
-                    <td class="objective">Utiliser les Big Data pour l'aéronautique</td>
-                    <td class="advantages">Formation adaptée aux nouveaux défis numériques.</td>
-                    <td class="disadvantages">Réservée aux profils techniques.</td>
+                    <td>15/02/2024</td>
+                    <td>Formation Sécurité Aéroportuaire</td>
+                    <td>14h - 17h</td>
+                    <td>Salle B, Site Principal</td>
+                    <td>Éric Moulin, Laura Fontaine, Thomas Brun</td>
+                    <td>Aéroport de Paris Formation</td>
+                </tr>
+
+                <!-- Mars -->
+                <tr class="highlight">
+                    <td colspan="6">Mars</td>
                 </tr>
                 <tr>
-                    <td>Maintenance Prédictive</td>
-                    <td>Airbus Digital Analytics</td>
-                    <td class="cost">2 000 €</td>
-                    <td class="duration">3 jours</td>
-                    <td class="rating">⭐⭐⭐⭐⭐</td>
-                    <td class="objective">Optimiser la maintenance avec l'IA</td>
-                    <td class="advantages">Apprentissage pratique et immédiat.</td>
-                    <td class="disadvantages">Exigeant pour les débutants.</td>
+                    <td>10/03/2024</td>
+                    <td>Sensibilisation à l'Hydrogène</td>
+                    <td>9h - 12h</td>
+                    <td>Salle A, Site Principal</td>
+                    <td>Michel Perrin, Elsa Robin, Victor Moreau</td>
+                    <td>Safran Training Academy</td>
+                </tr>
+                <tr>
+                    <td>25/03/2024</td>
+                    <td>Réglementation Aéronautique</td>
+                    <td>14h - 17h</td>
+                    <td>Salle B, Site Principal</td>
+                    <td>Lucie Barret, Hugo Lemoine, Clara Vidal</td>
+                    <td>Airbus Training Center</td>
                 </tr>
             </tbody>
         </table>
+
+        <div class="notes">
+            <strong>Notes :</strong>
+            <ul>
+                <li>Les sessions sont organisées en groupes de 30 personnes pour optimiser les absences.</li>
+                <li>Chaque collaborateur est informé 3 semaines à l'avance pour préparer son emploi du temps.</li>
+                <li>Les formations sont priorisées hors heures de pointe de production.</li>
+            </ul>
+        </div>
     </div>
 
 </body>
