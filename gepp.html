@@ -6,43 +6,64 @@
     <title>Tableau Comparatif des Formations et Prestataires</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f4f6f9;
             color: #333;
         }
         .container {
-            width: 80%;
+            width: 85%;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px;
         }
         h1 {
             text-align: center;
             color: #004080;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            padding: 12px;
-            text-align: left;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
         }
         th {
             background-color: #004080;
             color: white;
+            border-bottom: 2px solid #ddd;
         }
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f8f8f8;
         }
-        .highlight {
+        tr:hover {
+            background-color: #e6f0ff;
+        }
+        td {
+            background-color: #ffffff;
+        }
+        .category-header {
+            background-color: #f1f1f1;
             font-weight: bold;
             color: #004080;
+            border-top: 2px solid #004080;
+        }
+        .highlight {
+            color: #004080;
+            font-weight: bold;
+        }
+        .cost, .duration {
+            color: #0077b6;
+        }
+        .objective {
+            color: #6c757d;
         }
     </style>
 </head>
@@ -56,67 +77,74 @@
                 <tr>
                     <th>Formation</th>
                     <th>Prestataire</th>
-                    <th>Coût Unitaire</th>
-                    <th>Durée</th>
-                    <th>Objectif</th>
+                    <th class="cost">Coût Unitaire</th>
+                    <th class="duration">Durée</th>
+                    <th class="objective">Objectif</th>
                 </tr>
             </thead>
             <tbody>
+                <tr class="category-header">
+                    <td colspan="5">Formations Obligatoires</td>
+                </tr>
                 <tr>
                     <td>Réglementation Aéronautique</td>
                     <td>Airbus Training Center</td>
-                    <td>1 200 € - 1 500 €</td>
-                    <td>2-3 jours</td>
-                    <td>Maîtriser les réglementations pour la maintenance aéronautique</td>
+                    <td class="cost">1 200 € - 1 500 €</td>
+                    <td class="duration">2-3 jours</td>
+                    <td class="objective">Maîtriser les réglementations pour la maintenance aéronautique</td>
                 </tr>
                 <tr>
                     <td>Formation Sécurité et Facteurs Humains</td>
                     <td>Air Formation</td>
-                    <td>600 €</td>
-                    <td>1 jour</td>
-                    <td>Réduire les risques humains dans les opérations de maintenance</td>
+                    <td class="cost">600 €</td>
+                    <td class="duration">1 jour</td>
+                    <td class="objective">Réduire les risques humains dans les opérations de maintenance</td>
                 </tr>
                 <tr>
                     <td>Gestion des Émissions et Normes Environnementales</td>
                     <td>Green Aviation Academy</td>
-                    <td>700 €</td>
-                    <td>1-2 jours</td>
-                    <td>Former aux normes environnementales ISO 14001</td>
+                    <td class="cost">700 €</td>
+                    <td class="duration">1-2 jours</td>
+                    <td class="objective">Former aux normes environnementales ISO 14001</td>
                 </tr>
                 <tr>
                     <td>Formation Sécurité en Milieu Aéroportuaire</td>
                     <td>Aéroport de Paris Formation</td>
-                    <td>800 €</td>
-                    <td>1 jour</td>
-                    <td>Garantir la conformité aux normes de sécurité en milieu aéroportuaire</td>
+                    <td class="cost">800 €</td>
+                    <td class="duration">1 jour</td>
+                    <td class="objective">Garantir la conformité aux normes de sécurité en milieu aéroportuaire</td>
                 </tr>
                 <tr>
                     <td>Sensibilisation à la Transition Hydrogène</td>
                     <td>Safran Training Academy</td>
-                    <td>1 000 €</td>
-                    <td>2-3 jours</td>
-                    <td>Former à l’utilisation de l’hydrogène dans l’aéronautique</td>
+                    <td class="cost">1 000 €</td>
+                    <td class="duration">2-3 jours</td>
+                    <td class="objective">Former à l’utilisation de l’hydrogène dans l’aéronautique</td>
+                </tr>
+
+                <tr class="category-header">
+                    <td colspan="5">Formations Techniques</td>
                 </tr>
                 <tr>
                     <td>Propulsion Hydrogène</td>
                     <td>Safran Corporate University</td>
-                    <td>3 000 €</td>
-                    <td>3 jours</td>
-                    <td>Maîtriser la technologie de propulsion hydrogène pour l’aéronautique</td>
+                    <td class="cost">3 000 €</td>
+                    <td class="duration">3 jours</td>
+                    <td class="objective">Maîtriser la technologie de propulsion hydrogène pour l’aéronautique</td>
                 </tr>
                 <tr>
                     <td>Big Data pour l'Aéronautique</td>
                     <td>Dataiku</td>
-                    <td>2 500 €</td>
-                    <td>2 jours</td>
-                    <td>Utiliser les Big Data pour optimiser les opérations aéronautiques</td>
+                    <td class="cost">2 500 €</td>
+                    <td class="duration">2 jours</td>
+                    <td class="objective">Utiliser les Big Data pour optimiser les opérations aéronautiques</td>
                 </tr>
                 <tr>
                     <td>Maintenance Prédictive</td>
                     <td>Airbus Digital Maintenance Analytics</td>
-                    <td>2 000 €</td>
-                    <td>3 jours</td>
-                    <td>Former à l’utilisation des outils de maintenance prédictive</td>
+                    <td class="cost">2 000 €</td>
+                    <td class="duration">3 jours</td>
+                    <td class="objective">Former à l’utilisation des outils de maintenance prédictive</td>
                 </tr>
             </tbody>
         </table>
