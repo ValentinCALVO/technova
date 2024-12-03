@@ -3,60 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planning Annuel des Formations Obligatoires</title>
+    <title>Planning Annuel - Formations Obligatoires</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
         }
         .container {
-            width: 90%;
-            margin: auto;
+            width: 95%;
+            margin: 20px auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: white;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         h1 {
             text-align: center;
             color: #003366;
-            margin-bottom: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin: 20px 0;
         }
-        th {
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
             background-color: #00509e;
             color: white;
-            padding: 12px;
-            font-size: 14px;
-            border-radius: 8px;
+            text-transform: uppercase;
         }
-        td {
-            padding: 10px;
-            font-size: 12px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
-        tr:nth-child(even) {
+        table tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-        tr:hover {
+        table tr:hover {
             background-color: #eef7ff;
         }
         .highlight {
             background-color: #cce4f7;
             font-weight: bold;
-            font-size: 13px;
         }
-        .notes {
-            font-size: 12px;
+        .small-text {
+            font-size: 0.9em;
             color: #555;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -68,77 +62,77 @@
                 <tr>
                     <th>Mois</th>
                     <th>Formation</th>
-                    <th>Dates</th>
+                    <th>Date</th>
                     <th>Participants</th>
                     <th>Lieu</th>
-                    <th>Logistique</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Janvier -->
-                <tr class="highlight">
+                <tr>
                     <td>Janvier</td>
                     <td>Réglementation Aéronautique</td>
-                    <td>15/01, 20/01</td>
-                    <td>Groupes 1 et 2 (50 pers/session)</td>
-                    <td>Salle A, Site Principal</td>
-                    <td>Repas inclus, supports numériques</td>
+                    <td>15/01</td>
+                    <td>
+                        Alice Durand, Paul Martin, Emma Lemoine, Victor Hugo, Sarah Leblanc, Julien Dupont, 
+                        Élodie Petit, Lucas Garnier, Chloé Moreau, Nathan Lemoine, Camille Fontaine, 
+                        Arthur Lefebvre, Marie Lambert, Thomas Rolland, Zoé Richard, Antoine Roy, 
+                        Clara Vidal, Hugo Charpentier, Manon Bernard, Alexandre Marchand, Océane Rousseau, 
+                        Quentin Gauthier, Léa Girard, Théo Renard, Justine Collin, Maxime Joly, Sophie Chevalier, 
+                        Samuel Bouvier, Élise Perrot, Lucie Millet
+                    </td>
+                    <td>Salle A, Siège Principal</td>
                 </tr>
+                <tr>
+                    <td>Janvier</td>
+                    <td>Réglementation Aéronautique</td>
+                    <td>22/01</td>
+                    <td>
+                        Aurélien Dupuis, Clara Morel, Hugo Lefèvre, Inès Renaud, Gabriel Noël, 
+                        Margaux Garcia, Raphaël Perrin, Laura Costa, Valentin Dufour, Maëlys Guillaume, 
+                        Romain Faure, Émilie André, Mathis Blanchard, Anaïs Morel, Bastien Clément, 
+                        Jade Chauvin, Lucas Picard, Mélanie Marchal, Valentin Berger, Alice Fontaine, 
+                        Nathan Grégoire, Emma Leroy, Gabriel Lambert, Léa Masson, Thomas Moret, 
+                        Sarah Gaillard, Antoine Laurent, Louise Giraud, Élise Bernard, Paul Garnier
+                    </td>
+                    <td>Salle B, Siège Principal</td>
+                </tr>
+
                 <!-- Février -->
                 <tr>
                     <td>Février</td>
                     <td>Facteurs Humains</td>
-                    <td>05/02, 10/02</td>
-                    <td>Groupes 3 et 4 (50 pers/session)</td>
-                    <td>Salle B, Site Principal</td>
-                    <td>Collation incluse, matériel fourni</td>
+                    <td>05/02</td>
+                    <td>
+                        Hugo Lefebvre, Clara Vidal, Nathan Renaud, Sarah Noël, Paul Lambert, Émilie Lefèvre, 
+                        Lucas Chauvin, Chloé Dufour, Maxime André, Sophie Garcia, Antoine Picard, Élise Rolland, 
+                        Alice Marchal, Thomas Faure, Léa Fontaine, Quentin Clément, Élodie Moret, Victor Joly, 
+                        Camille Bernard, Gabriel Renard, Manon Grégoire, Arthur Marchand, Samuel Lambert, 
+                        Zoé Laurent, Alexandre Charpentier, Marie Lemoine, Julien Garnier, Nathan Gauthier, 
+                        Justine Masson, Emma Petit
+                    </td>
+                    <td>Salle C, Site Formation</td>
                 </tr>
+
                 <!-- Mars -->
-                <tr class="highlight">
+                <tr>
                     <td>Mars</td>
                     <td>Gestion des Normes Environnementales</td>
-                    <td>15/03, 20/03</td>
-                    <td>Groupes 5 et 6 (50 pers/session)</td>
-                    <td>Salle A, Site Principal</td>
-                    <td>Modules éco-responsables fournis</td>
+                    <td>10/03</td>
+                    <td>
+                        Paul Martin, Élise Dupuis, Margaux Richard, Thomas Lemoine, Hugo Roy, Clara Vidal, 
+                        Zoé Laurent, Raphaël Marchal, Alice Petit, Valentin Perrot, Marie Garnier, Antoine Joly, 
+                        Chloé Fontaine, Nathan Morel, Émilie Rousseau, Camille Faure, Sarah Renard, Lucas André, 
+                        Manon Lefebvre, Clara Giraud, Maxime Noël, Justine Charpentier, Alexandre Marchand, 
+                        Océane Rolland, Gabriel Gauthier, Sophie Lambert, Élise Collin, Arthur Perrot, Léa Lemoine, 
+                        Emma Renaud
+                    </td>
+                    <td>Salle B, Siège Principal</td>
                 </tr>
-                <!-- Avril -->
-                <tr>
-                    <td>Avril</td>
-                    <td>Sécurité en Milieu Aéroportuaire</td>
-                    <td>05/04, 10/04</td>
-                    <td>Groupes 7 et 8 (50 pers/session)</td>
-                    <td>Salle B, Site Principal</td>
-                    <td>Simulations interactives incluses</td>
-                </tr>
-                <!-- Mai -->
-                <tr class="highlight">
-                    <td>Mai</td>
-                    <td>Sensibilisation à l’Hydrogène</td>
-                    <td>15/05, 20/05</td>
-                    <td>Groupes 9 et 10 (50 pers/session)</td>
-                    <td>Salle A, Site Principal</td>
-                    <td>Plateforme digitale accessible après la formation</td>
-                </tr>
-                <!-- Juin -->
-                <tr>
-                    <td>Juin</td>
-                    <td>Réglementation Aéronautique (Session de rattrapage)</td>
-                    <td>10/06</td>
-                    <td>Groupes 11 (25 pers/session)</td>
-                    <td>Salle B, Site Principal</td>
-                    <td>Support en ligne</td>
-                </tr>
+                <!-- Continue with other months and formations -->
             </tbody>
         </table>
-        <div class="notes">
-            <p><strong>Logistique optimisée :</strong></p>
-            <ul>
-                <li>Sessions planifiées en début et fin de semaine pour éviter les pics de production.</li>
-                <li>Groupes organisés pour alterner entre la formation et la production.</li>
-                <li>Support numérique et accès en ligne pour limiter l'absentéisme en cas d'empêchement.</li>
-            </ul>
-        </div>
+        <p class="small-text">Logistique : Sessions organisées avec alternance des équipes pour maintenir la continuité de l'activité. Repas et matériel inclus.</p>
     </div>
 </body>
 </html>
