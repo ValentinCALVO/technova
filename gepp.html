@@ -6,10 +6,10 @@
   <title>Calendrier Global - Plan d'Action GEPP</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background-color: #f8fafc;
       color: #333;
     }
 
@@ -22,50 +22,57 @@
 
     h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 28px;
+      font-weight: bold;
     }
 
     .container {
+      max-width: 1200px;
       margin: 20px auto;
       padding: 20px;
-      max-width: 1200px;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .description {
+      font-size: 16px;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
     .gantt {
       display: grid;
-      grid-template-columns: 150px repeat(12, 1fr);
+      grid-template-columns: 200px repeat(12, 1fr);
       border-collapse: collapse;
-      border: 1px solid #ccc;
-      margin-top: 20px;
+      font-size: 14px;
     }
 
     .gantt-header div,
     .gantt-row div {
-      padding: 10px;
+      padding: 15px;
       text-align: center;
       border: 1px solid #ddd;
     }
 
     .gantt-header div {
-      background-color: #004080;
+      background-color: #003366;
       color: white;
       font-weight: bold;
     }
 
     .gantt-row div:first-child {
-      background-color: #eaeaea;
+      background-color: #f0f0f0;
       font-weight: bold;
+      text-align: left;
     }
 
     .bar {
       background-color: #76c7c0;
       color: white;
+      font-size: 12px;
       text-align: center;
       border-radius: 4px;
-      font-size: 12px;
     }
 
     .bar.long {
@@ -82,6 +89,18 @@
       font-size: 14px;
       color: #666;
     }
+
+    @media (max-width: 768px) {
+      .gantt {
+        grid-template-columns: 150px repeat(6, 1fr);
+        font-size: 12px;
+      }
+
+      .gantt-header div,
+      .gantt-row div {
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -89,7 +108,10 @@
   <h1>Calendrier Global du Plan d'Action GEPP</h1>
 </header>
 <div class="container">
-  <p><strong>Phases clés :</strong> Les actions sont réparties sur 36 mois avec des jalons spécifiques pour assurer le suivi.</p>
+  <p class="description">
+    <strong>Phases clés :</strong> Ce calendrier présente une vue d'ensemble sur les 36 mois à venir pour l'implémentation du plan d'action GEPP, 
+    avec des jalons importants pour les audits, formations et suivis.
+  </p>
   <div class="gantt">
     <!-- Header -->
     <div></div>
