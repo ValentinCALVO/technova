@@ -3,67 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrice des Compétences - Plan d'Action GEPP</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Matrice des Compétences - GEPP</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f4f7fb;
             color: #333;
         }
         .container {
             width: 90%;
             margin: 0 auto;
             padding: 20px;
+            max-width: 1000px;
         }
         h1 {
             text-align: center;
-            color: #004080;
-            font-size: 30px;
+            color: #2d5876;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
+            margin-top: 30px;
         }
         th, td {
-            padding: 15px;
-            text-align: left;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
             font-size: 14px;
         }
         th {
-            background-color: #004080;
+            background-color: #2d5876;
             color: white;
         }
-        tr.category-row {
-            background-color: #e8eaf6;
-            font-weight: bold;
+        .competence-row {
+            background-color: #e7f0f9;
+        }
+        .level-1 {
+            background-color: #ffebeb;
+        }
+        .level-2 {
+            background-color: #ffe1a1;
+        }
+        .level-3 {
+            background-color: #c6e6c6;
+        }
+        .level-4 {
+            background-color: #b3d9ff;
         }
         .highlight {
-            background-color: #f9f9f9;
-        }
-        .header-cell {
+            color: #2d5876;
             font-weight: bold;
-            background-color: #e1f5fe;
-        }
-        .icon-cell {
-            text-align: center;
         }
         .icon {
-            font-size: 20px;
-            color: #004080;
+            width: 20px;
+            height: 20px;
         }
-        .beginner { background-color: #d1c4e9; }
-        .intermediate { background-color: #ffee58; }
-        .advanced { background-color: #66bb6a; }
-        .expert { background-color: #ff7043; }
-        .collab-cell {
-            text-align: center;
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -71,120 +71,91 @@
 
     <div class="container">
         <h1>Matrice des Compétences - Plan d'Action GEPP</h1>
-
+        
         <table>
             <thead>
-                <tr class="header-row">
-                    <th class="header-cell">Compétence</th>
-                    <th class="header-cell">Métier/Rôle</th>
-                    <th class="header-cell">Niveau requis</th>
-                    <th class="header-cell">Formation associée</th>
-                    <th class="header-cell">Collaborateurs concernés</th>
-                    <th class="header-cell">Objectifs associés</th>
+                <tr>
+                    <th>Compétences</th>
+                    <th>Métier</th>
+                    <th>Rôle</th>
+                    <th>Compétence Technique</th>
+                    <th>Objectif de Formation</th>
+                    <th>Niveau</th>
+                    <th>Formation Associée</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Formations Obligatoires -->
-                <tr class="category-row">
-                    <td colspan="6"><strong>Formations Obligatoires</strong></td>
+                <tr class="competence-row">
+                    <td>
+                        <div class="icon-wrapper"><img src="https://img.icons8.com/ios/50/000000/plane.png" alt="Avion" class="icon"></div>
+                        Réglementation Aéronautique
+                    </td>
+                    <td>Maintenance Avion</td>
+                    <td>Technicien</td>
+                    <td>Connaissances des normes</td>
+                    <td>Obtenir la certification conforme</td>
+                    <td class="level-3">Avancé</td>
+                    <td>Airbus Training Center (2-3 jours)</td>
                 </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-cogs icon"></i> Réglementation aéronautique</td>
-                    <td>Technicien de maintenance</td>
-                    <td class="beginner"><i class="fas fa-arrow-up"></i> Débutant</td>
-                    <td>Airbus Training Center</td>
-                    <td class="collab-cell">750</td>
-                    <td>Maîtriser les réglementations pour la maintenance</td>
+                <tr class="competence-row">
+                    <td>
+                        <div class="icon-wrapper"><img src="https://img.icons8.com/ios/50/000000/safety-helmet.png" alt="Sécurité" class="icon"></div>
+                        Sécurité & Facteurs Humains
+                    </td>
+                    <td>Maintenance Aérienne</td>
+                    <td>Technicien</td>
+                    <td>Gestion des risques humains</td>
+                    <td>Réduire les erreurs humaines dans la maintenance</td>
+                    <td class="level-2">Intermédiaire</td>
+                    <td>Air Formation (1 jour)</td>
                 </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-shield-alt icon"></i> Formation Sécurité et Facteurs Humains</td>
-                    <td>Technicien de maintenance</td>
-                    <td class="intermediate"><i class="fas fa-arrow-up"></i> Intermédiaire</td>
-                    <td>Air Formation</td>
-                    <td class="collab-cell">750</td>
-                    <td>Réduire les risques humains dans la maintenance</td>
+                <tr class="competence-row">
+                    <td>
+                        <div class="icon-wrapper"><img src="https://img.icons8.com/ios/50/000000/environment.png" alt="Environnement" class="icon"></div>
+                        Gestion des Normes Environnementales
+                    </td>
+                    <td>Technicien Environnement</td>
+                    <td>Technicien</td>
+                    <td>Réduction des émissions</td>
+                    <td>Comprendre les normes ISO 14001</td>
+                    <td class="level-3">Avancé</td>
+                    <td>Green Aviation Academy (2 jours)</td>
                 </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-leaf icon"></i> Gestion des émissions et normes environnementales</td>
-                    <td>Technicien environnemental</td>
-                    <td class="intermediate"><i class="fas fa-arrow-up"></i> Intermédiaire</td>
-                    <td>Green Aviation Academy</td>
-                    <td class="collab-cell">750</td>
-                    <td>Comprendre les normes ISO 14001 et les réglementations</td>
+                <tr class="competence-row">
+                    <td>
+                        <div class="icon-wrapper"><img src="https://img.icons8.com/ios/50/000000/hydrogen.png" alt="Hydrogène" class="icon"></div>
+                        Transition Hydrogène
+                    </td>
+                    <td>Innovation Technologique</td>
+                    <td>Ingénieur</td>
+                    <td>Maintenance Propulsion Hydrogène</td>
+                    <td>Anticiper les évolutions des moteurs</td>
+                    <td class="level-4">Expert</td>
+                    <td>Safran Training Academy (3 jours)</td>
                 </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-lock icon"></i> Formation Sécurité en Milieu Aéroportuaire</td>
-                    <td>Technicien aéroportuaire</td>
-                    <td class="advanced"><i class="fas fa-arrow-up"></i> Avancé</td>
-                    <td>Aéroport de Paris</td>
-                    <td class="collab-cell">750</td>
-                    <td>Garantir le respect des normes de sécurité</td>
+                <tr class="competence-row">
+                    <td>
+                        <div class="icon-wrapper"><img src="https://img.icons8.com/ios/50/000000/processor.png" alt="Big Data" class="icon"></div>
+                        Big Data pour l'Aéronautique
+                    </td>
+                    <td>Ingénierie Aéronautique</td>
+                    <td>Analyste</td>
+                    <td>Analyse des données</td>
+                    <td>Exploiter les données pour prédire les pannes</td>
+                    <td class="level-3">Avancé</td>
+                    <td>Dataiku (2 jours)</td>
                 </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-water icon"></i> Sensibilisation à la Transition Hydrogène</td>
-                    <td>Technicien de maintenance</td>
-                    <td class="advanced"><i class="fas fa-arrow-up"></i> Avancé</td>
-                    <td>Safran Training Academy</td>
-                    <td class="collab-cell">750</td>
-                    <td>Former à l’utilisation de l’hydrogène</td>
-                </tr>
-
-                <!-- Formations Techniques -->
-                <tr class="category-row">
-                    <td colspan="6"><strong>Formations Techniques</strong></td>
-                </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-bolt icon"></i> Propulsion Hydrogène</td>
-                    <td>Technicien moteur</td>
-                    <td class="expert"><i class="fas fa-arrow-up"></i> Expert</td>
-                    <td>Safran Corporate University</td>
-                    <td class="collab-cell">250</td>
-                    <td>Former à la propulsion hydrogène</td>
-                </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-database icon"></i> Big Data pour l'Aéronautique</td>
-                    <td>Ingénieur Data</td>
-                    <td class="advanced"><i class="fas fa-arrow-up"></i> Avancé</td>
-                    <td>Dataiku</td>
-                    <td class="collab-cell">200</td>
-                    <td>Savoir analyser les données de maintenance et d’opérations</td>
-                </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-tools icon"></i> Maintenance Prédictive</td>
-                    <td>Technicien de maintenance</td>
-                    <td class="advanced"><i class="fas fa-arrow-up"></i> Avancé</td>
-                    <td>Airbus Digital Maintenance</td>
-                    <td class="collab-cell">300</td>
-                    <td>Former à la maintenance prédictive</td>
-                </tr>
-
-                <!-- Autres Compétences -->
-                <tr class="category-row">
-                    <td colspan="6"><strong>Autres Compétences</strong></td>
-                </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-project-diagram icon"></i> Gestion de Projet Agile</td>
-                    <td>Chef de projet</td>
-                    <td class="intermediate"><i class="fas fa-arrow-up"></i> Intermédiaire</td>
-                    <td>Air Formation</td>
-                    <td class="collab-cell">50</td>
-                    <td>Mettre en place une gestion de projet agile</td>
-                </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-users-cog icon"></i> Leadership et Management</td>
-                    <td>Manager</td>
-                    <td class="advanced"><i class="fas fa-arrow-up"></i> Avancé</td>
-                    <td>Formation Leadership et Management</td>
-                    <td class="collab-cell">100</td>
-                    <td>Former les managers à la gestion d’équipes</td>
-                </tr>
-                <tr class="highlight">
-                    <td><i class="fas fa-comments icon"></i> Communication en milieu aéronautique</td>
-                    <td>Tous les employés</td>
-                    <td class="intermediate"><i class="fas fa-arrow-up"></i> Intermédiaire</td>
-                    <td>Air Formation</td>
-                    <td class="collab-cell">1000</td>
-                    <td>Améliorer la communication au sein de l’équipe</td>
+                <tr class="competence-row">
+                    <td>
+                        <div class="icon-wrapper"><img src="https://img.icons8.com/ios/50/000000/tools.png" alt="Maintenance" class="icon"></div>
+                        Maintenance Prédictive
+                    </td>
+                    <td>Maintenance Aéronautique</td>
+                    <td>Technicien</td>
+                    <td>Maintenance prédictive</td>
+                    <td>Réduire les coûts de maintenance</td>
+                    <td class="level-4">Expert</td>
+                    <td>Airbus Digital Maintenance (3 jours)</td>
                 </tr>
             </tbody>
         </table>
