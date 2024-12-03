@@ -3,136 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planning Annuel - Formations Obligatoires</title>
+    <title>Calendrier des Formations</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
+            padding: 20px;
         }
         .container {
             width: 95%;
-            margin: 20px auto;
+            margin: auto;
             padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
-            color: #003366;
+            color: #004080;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-top: 20px;
         }
-        table th, table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        table th {
-            background-color: #00509e;
+        th {
+            background-color: #004080;
             color: white;
-            text-transform: uppercase;
+            padding: 12px;
+            font-size: 14px;
         }
-        table tr:nth-child(even) {
-            background-color: #f9f9f9;
+        td {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            border: 1px solid #ddd;
         }
-        table tr:hover {
-            background-color: #eef7ff;
+        tr:nth-child(even) {
+            background-color: #f3f4fa;
+        }
+        tr:hover {
+            background-color: #e0e7ff;
         }
         .highlight {
-            background-color: #cce4f7;
             font-weight: bold;
+            color: #004080;
         }
-        .small-text {
-            font-size: 0.9em;
+        .notes {
+            margin-top: 20px;
+            font-size: 12px;
             color: #555;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Planning Annuel des Formations Obligatoires - 2024</h1>
+        <h1>Calendrier des Formations Obligatoires - Année 2024</h1>
+
         <table>
             <thead>
                 <tr>
-                    <th>Mois</th>
-                    <th>Formation</th>
                     <th>Date</th>
-                    <th>Participants</th>
+                    <th>Formation</th>
+                    <th>Heure</th>
                     <th>Lieu</th>
+                    <th>Participants</th>
+                    <th>Formateur</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Janvier -->
-                <tr>
-                    <td>Janvier</td>
-                    <td>Réglementation Aéronautique</td>
-                    <td>15/01</td>
-                    <td>
-                        Alice Durand, Paul Martin, Emma Lemoine, Victor Hugo, Sarah Leblanc, Julien Dupont, 
-                        Élodie Petit, Lucas Garnier, Chloé Moreau, Nathan Lemoine, Camille Fontaine, 
-                        Arthur Lefebvre, Marie Lambert, Thomas Rolland, Zoé Richard, Antoine Roy, 
-                        Clara Vidal, Hugo Charpentier, Manon Bernard, Alexandre Marchand, Océane Rousseau, 
-                        Quentin Gauthier, Léa Girard, Théo Renard, Justine Collin, Maxime Joly, Sophie Chevalier, 
-                        Samuel Bouvier, Élise Perrot, Lucie Millet
-                    </td>
-                    <td>Salle A, Siège Principal</td>
+                <tr class="highlight">
+                    <td colspan="6">Janvier</td>
                 </tr>
                 <tr>
-                    <td>Janvier</td>
+                    <td>15/01/2024</td>
                     <td>Réglementation Aéronautique</td>
-                    <td>22/01</td>
-                    <td>
-                        Aurélien Dupuis, Clara Morel, Hugo Lefèvre, Inès Renaud, Gabriel Noël, 
-                        Margaux Garcia, Raphaël Perrin, Laura Costa, Valentin Dufour, Maëlys Guillaume, 
-                        Romain Faure, Émilie André, Mathis Blanchard, Anaïs Morel, Bastien Clément, 
-                        Jade Chauvin, Lucas Picard, Mélanie Marchal, Valentin Berger, Alice Fontaine, 
-                        Nathan Grégoire, Emma Leroy, Gabriel Lambert, Léa Masson, Thomas Moret, 
-                        Sarah Gaillard, Antoine Laurent, Louise Giraud, Élise Bernard, Paul Garnier
-                    </td>
-                    <td>Salle B, Siège Principal</td>
+                    <td>9h - 12h</td>
+                    <td>Salle A, Site Principal</td>
+                    <td>Jean Dupont, Marie Leroy, Paul Martin</td>
+                    <td>Airbus Training Center</td>
+                </tr>
+                <tr>
+                    <td>20/01/2024</td>
+                    <td>Facteurs Humains</td>
+                    <td>14h - 17h</td>
+                    <td>Salle B, Site Principal</td>
+                    <td>Anna Morel, Marc Bernard, Julie Lefèvre</td>
+                    <td>Air Formation</td>
                 </tr>
 
                 <!-- Février -->
+                <tr class="highlight">
+                    <td colspan="6">Février</td>
+                </tr>
                 <tr>
-                    <td>Février</td>
-                    <td>Facteurs Humains</td>
-                    <td>05/02</td>
-                    <td>
-                        Hugo Lefebvre, Clara Vidal, Nathan Renaud, Sarah Noël, Paul Lambert, Émilie Lefèvre, 
-                        Lucas Chauvin, Chloé Dufour, Maxime André, Sophie Garcia, Antoine Picard, Élise Rolland, 
-                        Alice Marchal, Thomas Faure, Léa Fontaine, Quentin Clément, Élodie Moret, Victor Joly, 
-                        Camille Bernard, Gabriel Renard, Manon Grégoire, Arthur Marchand, Samuel Lambert, 
-                        Zoé Laurent, Alexandre Charpentier, Marie Lemoine, Julien Garnier, Nathan Gauthier, 
-                        Justine Masson, Emma Petit
-                    </td>
-                    <td>Salle C, Site Formation</td>
+                    <td>05/02/2024</td>
+                    <td>Gestion des Normes Environnementales</td>
+                    <td>9h - 12h</td>
+                    <td>Salle A, Site Principal</td>
+                    <td>Clara Dubois, Olivier Garnier, Sophie Petit</td>
+                    <td>Green Aviation Academy</td>
+                </tr>
+                <tr>
+                    <td>15/02/2024</td>
+                    <td>Formation Sécurité Aéroportuaire</td>
+                    <td>14h - 17h</td>
+                    <td>Salle B, Site Principal</td>
+                    <td>Éric Moulin, Laura Fontaine, Thomas Brun</td>
+                    <td>Aéroport de Paris Formation</td>
                 </tr>
 
                 <!-- Mars -->
-                <tr>
-                    <td>Mars</td>
-                    <td>Gestion des Normes Environnementales</td>
-                    <td>10/03</td>
-                    <td>
-                        Paul Martin, Élise Dupuis, Margaux Richard, Thomas Lemoine, Hugo Roy, Clara Vidal, 
-                        Zoé Laurent, Raphaël Marchal, Alice Petit, Valentin Perrot, Marie Garnier, Antoine Joly, 
-                        Chloé Fontaine, Nathan Morel, Émilie Rousseau, Camille Faure, Sarah Renard, Lucas André, 
-                        Manon Lefebvre, Clara Giraud, Maxime Noël, Justine Charpentier, Alexandre Marchand, 
-                        Océane Rolland, Gabriel Gauthier, Sophie Lambert, Élise Collin, Arthur Perrot, Léa Lemoine, 
-                        Emma Renaud
-                    </td>
-                    <td>Salle B, Siège Principal</td>
+                <tr class="highlight">
+                    <td colspan="6">Mars</td>
                 </tr>
-                <!-- Continue with other months and formations -->
+                <tr>
+                    <td>10/03/2024</td>
+                    <td>Sensibilisation à l'Hydrogène</td>
+                    <td>9h - 12h</td>
+                    <td>Salle A, Site Principal</td>
+                    <td>Michel Perrin, Elsa Robin, Victor Moreau</td>
+                    <td>Safran Training Academy</td>
+                </tr>
+                <tr>
+                    <td>25/03/2024</td>
+                    <td>Réglementation Aéronautique</td>
+                    <td>14h - 17h</td>
+                    <td>Salle B, Site Principal</td>
+                    <td>Lucie Barret, Hugo Lemoine, Clara Vidal</td>
+                    <td>Airbus Training Center</td>
+                </tr>
             </tbody>
         </table>
-        <p class="small-text">Logistique : Sessions organisées avec alternance des équipes pour maintenir la continuité de l'activité. Repas et matériel inclus.</p>
+
+        <div class="notes">
+            <strong>Notes :</strong>
+            <ul>
+                <li>Les sessions sont organisées en groupes de 30 personnes pour optimiser les absences.</li>
+                <li>Chaque collaborateur est informé 3 semaines à l'avance pour préparer son emploi du temps.</li>
+                <li>Les formations sont priorisées hors heures de pointe de production.</li>
+            </ul>
+        </div>
     </div>
+
 </body>
 </html>
