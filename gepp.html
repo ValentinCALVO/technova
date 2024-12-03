@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendrier des Formations</title>
+    <title>Planning Détaillé des Formations</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
         }
         .container {
-            width: 95%;
+            width: 90%;
             margin: auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
         }
         h1 {
             text-align: center;
-            color: #004080;
+            color: #003366;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
@@ -29,125 +30,142 @@
             margin-top: 20px;
         }
         th {
-            background-color: #004080;
+            background-color: #00509e;
             color: white;
             padding: 12px;
             font-size: 14px;
+            border-radius: 8px;
         }
         td {
-            text-align: center;
             padding: 10px;
             font-size: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
+            text-align: center;
         }
         tr:nth-child(even) {
-            background-color: #f3f4fa;
+            background-color: #f9f9f9;
         }
         tr:hover {
-            background-color: #e0e7ff;
+            background-color: #eef7ff;
         }
         .highlight {
+            background-color: #cce4f7;
             font-weight: bold;
-            color: #004080;
+            font-size: 13px;
         }
         .notes {
-            margin-top: 20px;
             font-size: 12px;
             color: #555;
+            margin-top: 20px;
+        }
+        .legend {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f7ff;
+            border: 1px solid #cce4f7;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .legend span {
+            font-weight: bold;
+            color: #00509e;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>Calendrier des Formations Obligatoires - Année 2024</h1>
-
+        <h1>Planning Détaillé des Formations - 2024</h1>
         <table>
             <thead>
                 <tr>
                     <th>Date</th>
                     <th>Formation</th>
-                    <th>Heure</th>
+                    <th>Durée</th>
+                    <th>Formateur</th>
                     <th>Lieu</th>
                     <th>Participants</th>
-                    <th>Formateur</th>
+                    <th>Logistique</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Janvier -->
                 <tr class="highlight">
-                    <td colspan="6">Janvier</td>
+                    <td colspan="7">Janvier</td>
                 </tr>
                 <tr>
                     <td>15/01/2024</td>
                     <td>Réglementation Aéronautique</td>
-                    <td>9h - 12h</td>
+                    <td>3 jours (9h-17h)</td>
+                    <td>Airbus Training Center</td>
                     <td>Salle A, Site Principal</td>
                     <td>Jean Dupont, Marie Leroy, Paul Martin</td>
-                    <td>Airbus Training Center</td>
+                    <td>Prise en charge repas, supports numériques fournis</td>
                 </tr>
                 <tr>
                     <td>20/01/2024</td>
                     <td>Facteurs Humains</td>
-                    <td>14h - 17h</td>
+                    <td>1 jour (9h-16h)</td>
+                    <td>Air Formation</td>
                     <td>Salle B, Site Principal</td>
                     <td>Anna Morel, Marc Bernard, Julie Lefèvre</td>
-                    <td>Air Formation</td>
+                    <td>Catering sur place, manuel inclus</td>
                 </tr>
 
                 <!-- Février -->
                 <tr class="highlight">
-                    <td colspan="6">Février</td>
+                    <td colspan="7">Février</td>
                 </tr>
                 <tr>
                     <td>05/02/2024</td>
                     <td>Gestion des Normes Environnementales</td>
-                    <td>9h - 12h</td>
+                    <td>2 jours (9h-16h)</td>
+                    <td>Green Aviation Academy</td>
                     <td>Salle A, Site Principal</td>
                     <td>Clara Dubois, Olivier Garnier, Sophie Petit</td>
-                    <td>Green Aviation Academy</td>
+                    <td>Matériel éco-responsable fourni</td>
                 </tr>
                 <tr>
                     <td>15/02/2024</td>
-                    <td>Formation Sécurité Aéroportuaire</td>
-                    <td>14h - 17h</td>
+                    <td>Sécurité en Milieu Aéroportuaire</td>
+                    <td>1 jour (14h-17h)</td>
+                    <td>Aéroport de Paris Formation</td>
                     <td>Salle B, Site Principal</td>
                     <td>Éric Moulin, Laura Fontaine, Thomas Brun</td>
-                    <td>Aéroport de Paris Formation</td>
+                    <td>Simulations pratiques incluses</td>
                 </tr>
 
                 <!-- Mars -->
                 <tr class="highlight">
-                    <td colspan="6">Mars</td>
+                    <td colspan="7">Mars</td>
                 </tr>
                 <tr>
                     <td>10/03/2024</td>
-                    <td>Sensibilisation à l'Hydrogène</td>
-                    <td>9h - 12h</td>
+                    <td>Sensibilisation à l’Hydrogène</td>
+                    <td>1 jour (9h-17h)</td>
+                    <td>Safran Training Academy</td>
                     <td>Salle A, Site Principal</td>
                     <td>Michel Perrin, Elsa Robin, Victor Moreau</td>
-                    <td>Safran Training Academy</td>
+                    <td>Modules interactifs inclus</td>
                 </tr>
                 <tr>
                     <td>25/03/2024</td>
                     <td>Réglementation Aéronautique</td>
-                    <td>14h - 17h</td>
+                    <td>3 jours (9h-17h)</td>
+                    <td>Airbus Training Center</td>
                     <td>Salle B, Site Principal</td>
                     <td>Lucie Barret, Hugo Lemoine, Clara Vidal</td>
-                    <td>Airbus Training Center</td>
+                    <td>Support numérique + accès distant</td>
                 </tr>
             </tbody>
         </table>
-
-        <div class="notes">
-            <strong>Notes :</strong>
+        <div class="legend">
+            <span>Légende :</span>
             <ul>
-                <li>Les sessions sont organisées en groupes de 30 personnes pour optimiser les absences.</li>
-                <li>Chaque collaborateur est informé 3 semaines à l'avance pour préparer son emploi du temps.</li>
-                <li>Les formations sont priorisées hors heures de pointe de production.</li>
+                <li><strong>Logistique :</strong> Indique les commodités incluses (repas, supports, outils).</li>
+                <li><strong>Participants :</strong> Répartition organisée pour garantir la continuité de la production.</li>
+                <li><strong>Durée :</strong> Les horaires permettent d'éviter les pics d'activité en production.</li>
             </ul>
         </div>
     </div>
-
 </body>
 </html>
