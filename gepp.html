@@ -14,20 +14,16 @@
     }
 
     .container {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .title {
       font-size: 32px;
       font-weight: bold;
       color: #004080;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       text-align: center;
     }
 
@@ -35,12 +31,11 @@
       font-size: 18px;
       color: #555;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .budget-table {
-      width: 90%;
-      max-width: 1200px;
+      width: 100%;
       border-collapse: collapse;
       margin: 0 auto;
     }
@@ -48,7 +43,7 @@
     .budget-table th, .budget-table td {
       border: 1px solid #ddd;
       text-align: left;
-      padding: 15px;
+      padding: 12px;
     }
 
     .budget-table th {
@@ -63,19 +58,43 @@
       font-weight: bold;
     }
 
+    .highlight {
+      font-weight: bold;
+      color: #004080;
+    }
+
     .total-row {
       background-color: #f4a261;
       font-weight: bold;
       text-align: right;
     }
 
-    .highlight {
-      color: #004080;
-      font-weight: bold;
+    .legend {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
 
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .legend-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+    }
+
+    .audit { background-color: #76c7c0; }
+    .formation { background-color: #f4a261; }
+    .mentorat { background-color: #2a9d8f; }
+    .obligatoire { background-color: #e63946; }
+
     footer {
-      margin-top: 20px;
+      margin-top: 30px;
       text-align: center;
       font-size: 12px;
       color: #888;
@@ -85,7 +104,7 @@
 <body>
   <div class="container">
     <div class="title">Budget Global - Plan d'Action GEPP</div>
-    <div class="subtitle">Détail des dépenses pour la mise en œuvre du projet sur 3 ans</div>
+    <div class="subtitle">Détail des dépenses prévues sur 3 ans</div>
     <table class="budget-table">
       <tr>
         <th>Catégorie</th>
@@ -93,55 +112,67 @@
         <th>Coût estimé (€)</th>
       </tr>
       <tr class="category-row">
-        <td>Audit et Cartographie des Compétences</td>
-        <td>Outils digitaux spécialisés et consultants externes</td>
+        <td>Audit et Cartographie</td>
+        <td>Outils spécialisés et consultants</td>
         <td class="highlight">20,000</td>
       </tr>
       <tr>
         <td></td>
-        <td>Ateliers et workshops internes</td>
+        <td>Workshops et ateliers internes</td>
         <td>10,000</td>
       </tr>
       <tr class="category-row">
-        <td>Formations et Développement des Compétences</td>
-        <td>Formations hydrogène (50 employés)</td>
+        <td>Formations techniques</td>
+        <td>Hydrogène pour 300 collaborateurs</td>
+        <td class="highlight">800,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Big Data, IA et éco-pilotage</td>
+        <td>700,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Formations avancées pour experts</td>
+        <td>50,000</td>
+      </tr>
+      <tr class="category-row obligatoire">
+        <td>Formations obligatoires</td>
+        <td>Réglementaires pour 750 collaborateurs</td>
+        <td class="highlight">2,000,000</td>
+      </tr>
+      <tr class="category-row">
+        <td>Mentorat</td>
+        <td>Développement et formation des mentors</td>
+        <td class="highlight">35,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Suivi et ajustements</td>
+        <td>15,000</td>
+      </tr>
+      <tr class="category-row">
+        <td>Outils et Suivi</td>
+        <td>Plateforme digitale pour gestion RH</td>
         <td class="highlight">50,000</td>
       </tr>
       <tr>
         <td></td>
-        <td>Formations Big Data et éco-pilotage (30 employés)</td>
-        <td>30,000</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Certifications externes pour experts seniors</td>
-        <td>15,000</td>
-      </tr>
-      <tr class="category-row">
-        <td>Mentorat</td>
-        <td>Développement et mise en place du programme</td>
-        <td class="highlight">25,000</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Formation des mentors internes</td>
-        <td>10,000</td>
-      </tr>
-      <tr class="category-row">
-        <td>Outils et Suivi</td>
-        <td>Plateforme de gestion RH et reporting</td>
-        <td class="highlight">30,000</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Suivi annuel et ajustements (3 ans)</td>
-        <td>15,000</td>
+        <td>Rapports annuels et maintenance</td>
+        <td>20,000</td>
       </tr>
       <tr class="total-row">
         <td colspan="2">Total Général</td>
-        <td class="highlight">205,000</td>
+        <td class="highlight">3,700,000</td>
       </tr>
     </table>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-box audit"></div>Audit</div>
+      <div class="legend-item"><div class="legend-box formation"></div>Formations techniques</div>
+      <div class="legend-item"><div class="legend-box obligatoire"></div>Formations obligatoires</div>
+      <div class="legend-item"><div class="legend-box mentorat"></div>Mentorat</div>
+    </div>
     <footer>© 2024 Journey - Plan d'Action GEPP</footer>
   </div>
 </body>
