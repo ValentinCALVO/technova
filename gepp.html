@@ -1,197 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Global - Plan d'Action GEPP</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #004080;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #004080;
-            color: white;
-        }
-        .category-row {
-            background-color: #e8eaf6;
-            font-weight: bold;
-        }
-        .highlight {
-            color: #004080;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Global Formation</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2C3E50;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .budget-table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+    }
+
+    .budget-table th, .budget-table td {
+      border: 1px solid #BDC3C7;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .budget-table th {
+      background-color: #2980B9;
+      color: white;
+    }
+
+    .budget-table td {
+      font-size: 1.1em;
+    }
+
+    .highlight {
+      color: #2980B9;
+      font-weight: bold;
+    }
+
+    .budget-header {
+      margin-bottom: 30px;
+    }
+
+    .sub-header {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Budget Global Formation</h1>
 
-    <div class="container">
-        <h1>Budget Global - Plan d'Action GEPP</h1>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Catégorie</th>
-                    <th>Coût Unitaire</th>
-                    <th>Objectif</th>
-                    <th>Nombre de Personnes</th>
-                    <th>Coût Total Estimé</th>
-                    <th>Justification</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Formations Obligatoires -->
-                <tr class="category-row">
-                    <td colspan="6"><strong>Formations Obligatoires</strong></td>
-                </tr>
-                <tr>
-                    <td>Réglementation aéronautique</td>
-                    <td>1 200 € - 1 500 €</td>
-                    <td>Maîtriser les réglementations pour la maintenance</td>
-                    <td>750</td>
-                    <td>~1 125 000 €</td>
-                    <td>Formation dispensée par des prestataires certifiés comme Airbus Training Center, durée : 2-3 jours.</td>
-                </tr>
-                <tr>
-                    <td>Formation Sécurité et Facteurs Humains</td>
-                    <td>600 €</td>
-                    <td>Réduire les risques humains dans la maintenance</td>
-                    <td>750</td>
-                    <td>~450 000 €</td>
-                    <td>Formation d'une journée dispensée par des experts comme Air Formation.</td>
-                </tr>
-                <tr>
-                    <td>Gestion des émissions et normes environnementales</td>
-                    <td>700 €</td>
-                    <td>Comprendre les nouvelles réglementations environnementales</td>
-                    <td>750</td>
-                    <td>~525 000 €</td>
-                    <td>Formation par Green Aviation Academy pour se conformer aux normes ISO 14001.</td>
-                </tr>
-                <tr>
-                    <td>Formation Sécurité en Milieu Aéroportuaire</td>
-                    <td>800 €</td>
-                    <td>Garantir le respect des normes de sécurité</td>
-                    <td>750</td>
-                    <td>~600 000 €</td>
-                    <td>Formation dispensée par l'Aéroport de Paris Formation pour les zones sensibles.</td>
-                </tr>
-                <tr>
-                    <td>Sensibilisation à la Transition Hydrogène</td>
-                    <td>1 000 €</td>
-                    <td>Former à l’utilisation de l’hydrogène</td>
-                    <td>750</td>
-                    <td>~750 000 €</td>
-                    <td>Formation par Safran Training Academy pour anticiper les nouvelles normes sur l’hydrogène.</td>
-                </tr>
-
-                <!-- Formations Techniques -->
-                <tr class="category-row">
-                    <td colspan="6"><strong>Formations Techniques</strong></td>
-                </tr>
-                <tr>
-                    <td>Propulsion Hydrogène</td>
-                    <td>3 000 €</td>
-                    <td>Former à la propulsion hydrogène</td>
-                    <td>250</td>
-                    <td>~750 000 €</td>
-                    <td>Formation intensive de 3 jours par Safran Corporate University sur la propulsion hydrogène.</td>
-                </tr>
-                <tr>
-                    <td>Big Data pour l'Aéronautique</td>
-                    <td>2 500 €</td>
-                    <td>Former à l'utilisation des Big Data dans l'aéronautique</td>
-                    <td>200</td>
-                    <td>~500 000 €</td>
-                    <td>Formation de 2 jours par Dataiku, adaptée aux enjeux spécifiques de l'aéronautique.</td>
-                </tr>
-                <tr>
-                    <td>Maintenance Prédictive</td>
-                    <td>2 000 €</td>
-                    <td>Former à la maintenance prédictive</td>
-                    <td>300</td>
-                    <td>~600 000 €</td>
-                    <td>Formation de 3 jours par Airbus Digital Maintenance Analytics sur la maintenance prédictive.</td>
-                </tr>
-
-                <!-- Autres Dépenses -->
-                <tr class="category-row">
-                    <td colspan="6"><strong>Autres Dépenses</strong></td>
-                </tr>
-                <tr>
-                    <td>Audit et Cartographie des Compétences</td>
-                    <td>100 000 €</td>
-                    <td>Cartographie complète des compétences et audit de l’existant</td>
-                    <td>1</td>
-                    <td>~100 000 €</td>
-                    <td>Prestataire externe pour réaliser l’audit des compétences et créer la cartographie des talents.</td>
-                </tr>
-                <tr>
-                    <td>Workshops et Séminaires</td>
-                    <td>50 000 €</td>
-                    <td>Ateliers et séminaires sur la gestion des talents</td>
-                    <td>1</td>
-                    <td>~50 000 €</td>
-                    <td>Organiser des workshops pour les managers et RH, animés par des consultants externes.</td>
-                </tr>
-                <tr>
-                    <td>Outils & Technologies pour la formation</td>
-                    <td>200 000 €</td>
-                    <td>Acquisition de logiciels et outils pédagogiques</td>
-                    <td>1</td>
-                    <td>~200 000 €</td>
-                    <td>Plateformes de e-learning et outils de gestion de la formation.</td>
-                </tr>
-                <tr>
-                    <td>Recrutement (350 personnes)</td>
-                    <td>5 000 €</td>
-                    <td>Coût moyen par recrutement</td>
-                    <td>350</td>
-                    <td>~1 750 000 €</td>
-                    <td>Prestations de recrutement et recrutement direct.</td>
-                </tr>
-                <tr>
-                    <td>Salaire des nouveaux recrutés</td>
-                    <td>30 000 €</td>
-                    <td>Salaires annuels des nouveaux collaborateurs</td>
-                    <td>350</td>
-                    <td>~10 500 000 €</td>
-                    <td>Salaires des 350 nouveaux recrutés (30 000 € par personne par an).</td>
-                </tr>
-
-                <!-- Total -->
-                <tr class="highlight">
-                    <td colspan="4"><strong>Total estimé sur 3 ans</strong></td>
-                    <td><strong>~15 000 000 €</strong></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="budget-header">
+      <p>Le plan de formation pour Journey sur 3 ans inclut les formations obligatoires et techniques, ainsi que d'autres dépenses pour l'accompagnement des employés.</p>
     </div>
 
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Dépenses</th>
+          <th>Coût estimé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Formations Obligatoires</strong> (750 collaborateurs)</td>
+          <td class="highlight">2,000,000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Formations Techniques</strong> (750 collaborateurs)</td>
+          <td class="highlight">1,500,000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Audit & Cartographie des compétences</strong></td>
+          <td class="highlight">100,000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Workshop & Sensibilisation</strong></td>
+          <td class="highlight">150,000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Suivi et évaluation continue</strong></td>
+          <td class="highlight">100,000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td class="highlight">3,850,000 €</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sub-header">
+      Détails des formations :
+    </div>
+    <p><strong>Formations Obligatoires :</strong> Règlementation, Sécurité, Émissions, Transition Hydrogène.</p>
+    <p><strong>Formations Techniques :</strong> Propulsion Hydrogène, Big Data, Maintenance Prédictive.</p>
+
+  </div>
 </body>
 </html>
