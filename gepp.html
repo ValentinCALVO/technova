@@ -3,151 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendrier des Formations</title>
+    <title>Plan sur la première année</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            line-height: 1.6;
             margin: 0;
             padding: 20px;
-        }
-        .container {
-            width: 95%;
-            margin: auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            color: #333;
         }
         h1 {
             text-align: center;
-            color: #004080;
+            color: #2c3e50;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        th {
-            background-color: #004080;
-            color: white;
-            padding: 12px;
-            font-size: 14px;
-        }
-        td {
-            text-align: center;
-            padding: 10px;
-            font-size: 12px;
+        th, td {
             border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
         }
         tr:nth-child(even) {
-            background-color: #f3f4fa;
+            background-color: #f2f2f2;
         }
         tr:hover {
-            background-color: #e0e7ff;
+            background-color: #ddd;
         }
-        .highlight {
+        .step {
             font-weight: bold;
-            color: #004080;
-        }
-        .notes {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #555;
+            color: #2c3e50;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Calendrier des Formations Obligatoires - Année 2024</h1>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Formation</th>
-                    <th>Heure</th>
-                    <th>Lieu</th>
-                    <th>Participants</th>
-                    <th>Formateur</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Janvier -->
-                <tr class="highlight">
-                    <td colspan="6">Janvier</td>
-                </tr>
-                <tr>
-                    <td>15/01/2024</td>
-                    <td>Réglementation Aéronautique</td>
-                    <td>9h - 12h</td>
-                    <td>Salle A, Site Principal</td>
-                    <td>Jean Dupont, Marie Leroy, Paul Martin</td>
-                    <td>Airbus Training Center</td>
-                </tr>
-                <tr>
-                    <td>20/01/2024</td>
-                    <td>Facteurs Humains</td>
-                    <td>14h - 17h</td>
-                    <td>Salle B, Site Principal</td>
-                    <td>Anna Morel, Marc Bernard, Julie Lefèvre</td>
-                    <td>Air Formation</td>
-                </tr>
-
-                <!-- Février -->
-                <tr class="highlight">
-                    <td colspan="6">Février</td>
-                </tr>
-                <tr>
-                    <td>05/02/2024</td>
-                    <td>Gestion des Normes Environnementales</td>
-                    <td>9h - 12h</td>
-                    <td>Salle A, Site Principal</td>
-                    <td>Clara Dubois, Olivier Garnier, Sophie Petit</td>
-                    <td>Green Aviation Academy</td>
-                </tr>
-                <tr>
-                    <td>15/02/2024</td>
-                    <td>Formation Sécurité Aéroportuaire</td>
-                    <td>14h - 17h</td>
-                    <td>Salle B, Site Principal</td>
-                    <td>Éric Moulin, Laura Fontaine, Thomas Brun</td>
-                    <td>Aéroport de Paris Formation</td>
-                </tr>
-
-                <!-- Mars -->
-                <tr class="highlight">
-                    <td colspan="6">Mars</td>
-                </tr>
-                <tr>
-                    <td>10/03/2024</td>
-                    <td>Sensibilisation à l'Hydrogène</td>
-                    <td>9h - 12h</td>
-                    <td>Salle A, Site Principal</td>
-                    <td>Michel Perrin, Elsa Robin, Victor Moreau</td>
-                    <td>Safran Training Academy</td>
-                </tr>
-                <tr>
-                    <td>25/03/2024</td>
-                    <td>Réglementation Aéronautique</td>
-                    <td>14h - 17h</td>
-                    <td>Salle B, Site Principal</td>
-                    <td>Lucie Barret, Hugo Lemoine, Clara Vidal</td>
-                    <td>Airbus Training Center</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="notes">
-            <strong>Notes :</strong>
-            <ul>
-                <li>Les sessions sont organisées en groupes de 30 personnes pour optimiser les absences.</li>
-                <li>Chaque collaborateur est informé 3 semaines à l'avance pour préparer son emploi du temps.</li>
-                <li>Les formations sont priorisées hors heures de pointe de production.</li>
-            </ul>
-        </div>
-    </div>
-
+    <h1>Plan sur la première année</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Étape</th>
+                <th>Action principale</th>
+                <th>Durée</th>
+                <th>Échéance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="step">1. Préparation (Semaine 1-4)</td>
+                <td>
+                    - Définir les besoins en collaboration avec les managers.<br>
+                    - Rédiger les fiches de poste.<br>
+                    - Identifier les canaux de publication.
+                </td>
+                <td>4 semaines</td>
+                <td>Mois 1</td>
+            </tr>
+            <tr>
+                <td class="step">2. Lancement (Semaine 5-8)</td>
+                <td>
+                    - Publication des offres sur les plateformes.<br>
+                    - Communication auprès des écoles (partenariat).<br>
+                    - Activation des réseaux sociaux et job boards.
+                </td>
+                <td>4 semaines</td>
+                <td>Mois 2</td>
+            </tr>
+            <tr>
+                <td class="step">3. Tri initial (Semaine 9-12)</td>
+                <td>
+                    - Pré-sélection des candidatures.<br>
+                    - Entretiens téléphoniques pour validation rapide.
+                </td>
+                <td>4 semaines</td>
+                <td>Mois 3</td>
+            </tr>
+            <tr>
+                <td class="step">4. Entretiens (Semaine 13-20)</td>
+                <td>
+                    - Organisation des entretiens techniques et RH.<br>
+                    - Utilisation d’études de cas/tests techniques.<br>
+                    - Vérification des références des meilleurs candidats.
+                </td>
+                <td>8 semaines</td>
+                <td>Mois 4-5</td>
+            </tr>
+            <tr>
+                <td class="step">5. Décision finale (Semaine 21-22)</td>
+                <td>
+                    - Validation par les managers.<br>
+                    - Proposition d’embauche aux candidats retenus.<br>
+                    - Révision et envoi des contrats.
+                </td>
+                <td>2 semaines</td>
+                <td>Mois 5-6</td>
+            </tr>
+            <tr>
+                <td class="step">6. Onboarding (Semaine 23-28)</td>
+                <td>
+                    - Intégration progressive des nouveaux talents.<br>
+                    - Organisation de sessions d’accueil.<br>
+                    - Développement de programmes de formation.
+                </td>
+                <td>6 semaines</td>
+                <td>Mois 6-7</td>
+            </tr>
+            <tr>
+                <td class="step">7. Suivi et ajustements (Semaine 29-52)</td>
+                <td>
+                    - Analyse des recrutements réalisés (KPI).<br>
+                    - Ajustements pour les campagnes suivantes.<br>
+                    - Planification des recrutements restants pour l’année.
+                </td>
+                <td>Récurrent jusqu'à 1 an</td>
+                <td>Mois 7-12</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
