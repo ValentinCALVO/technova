@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendrier Global - Plan d'Action GEPP</title>
+  <title>Budget Global - Plan d'Action GEPP</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -20,6 +20,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .title {
@@ -37,80 +38,44 @@
       margin-bottom: 40px;
     }
 
-    .calendar {
-      display: grid;
-      grid-template-columns: 200px repeat(6, 1fr);
+    .budget-table {
       width: 90%;
       max-width: 1200px;
       border-collapse: collapse;
-      text-align: center;
+      margin: 0 auto;
     }
 
-    .calendar div {
-      padding: 15px;
+    .budget-table th, .budget-table td {
       border: 1px solid #ddd;
+      text-align: left;
+      padding: 15px;
     }
 
-    .header {
+    .budget-table th {
       background-color: #004080;
       color: white;
       font-weight: bold;
-      font-size: 16px;
+      text-align: center;
     }
 
-    .row-title {
+    .category-row {
       background-color: #e8eaf6;
       font-weight: bold;
-      text-align: left;
     }
 
-    .bar {
-      display: inline-block;
-      width: 100%;
-      height: 25px;
-      border-radius: 5px;
-      color: white;
-      font-size: 12px;
-      line-height: 25px;
-    }
-
-    .audit {
-      background-color: #76c7c0;
-    }
-
-    .formation {
+    .total-row {
       background-color: #f4a261;
+      font-weight: bold;
+      text-align: right;
     }
 
-    .mentorat {
-      background-color: #2a9d8f;
-    }
-
-    .suivi {
-      background-color: #264653;
-    }
-
-    .legend {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .legend-box {
-      width: 20px;
-      height: 20px;
-      border-radius: 3px;
+    .highlight {
+      color: #004080;
+      font-weight: bold;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 20px;
       text-align: center;
       font-size: 12px;
       color: #888;
@@ -119,63 +84,64 @@
 </head>
 <body>
   <div class="container">
-    <div class="title">Calendrier Global - Plan d'Action GEPP</div>
-    <div class="subtitle">Vue d’ensemble des 36 mois avec les phases clés alignées sur les priorités stratégiques</div>
-    <div class="calendar">
-      <div class="header"></div>
-      <div class="header">Jan-Mars</div>
-      <div class="header">Avr-Juin</div>
-      <div class="header">Juil-Sept</div>
-      <div class="header">Oct-Déc</div>
-      <div class="header">Année 2</div>
-      <div class="header">Année 3</div>
-
-      <div class="row-title">Audit des compétences</div>
-      <div><div class="bar audit">Audit Initial</div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-
-      <div class="row-title">Formations pilotes</div>
-      <div></div>
-      <div><div class="bar formation">Hydrogène</div></div>
-      <div><div class="bar formation">Big Data</div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-
-      <div class="row-title">Généralisation des formations</div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div><div class="bar mentorat">Déploiement</div></div>
-      <div><div class="bar mentorat">Généralisation</div></div>
-      <div></div>
-
-      <div class="row-title">Mise en place du mentorat</div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div><div class="bar mentorat">Lancement</div></div>
-      <div><div class="bar mentorat">Déploiement</div></div>
-      <div><div class="bar mentorat">Ajustements</div></div>
-
-      <div class="row-title">Suivi et ajustements</div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div><div class="bar suivi">Suivi Annuel</div></div>
-      <div><div class="bar suivi">Pérennisation</div></div>
-    </div>
-    <div class="legend">
-      <div class="legend-item"><div class="legend-box" style="background-color: #76c7c0;"></div>Audit</div>
-      <div class="legend-item"><div class="legend-box" style="background-color: #f4a261;"></div>Formations</div>
-      <div class="legend-item"><div class="legend-box" style="background-color: #2a9d8f;"></div>Mentorat</div>
-      <div class="legend-item"><div class="legend-box" style="background-color: #264653;"></div>Suivi</div>
-    </div>
+    <div class="title">Budget Global - Plan d'Action GEPP</div>
+    <div class="subtitle">Détail des dépenses pour la mise en œuvre du projet sur 3 ans</div>
+    <table class="budget-table">
+      <tr>
+        <th>Catégorie</th>
+        <th>Détail</th>
+        <th>Coût estimé (€)</th>
+      </tr>
+      <tr class="category-row">
+        <td>Audit et Cartographie des Compétences</td>
+        <td>Outils digitaux spécialisés et consultants externes</td>
+        <td class="highlight">20,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Ateliers et workshops internes</td>
+        <td>10,000</td>
+      </tr>
+      <tr class="category-row">
+        <td>Formations et Développement des Compétences</td>
+        <td>Formations hydrogène (50 employés)</td>
+        <td class="highlight">50,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Formations Big Data et éco-pilotage (30 employés)</td>
+        <td>30,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Certifications externes pour experts seniors</td>
+        <td>15,000</td>
+      </tr>
+      <tr class="category-row">
+        <td>Mentorat</td>
+        <td>Développement et mise en place du programme</td>
+        <td class="highlight">25,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Formation des mentors internes</td>
+        <td>10,000</td>
+      </tr>
+      <tr class="category-row">
+        <td>Outils et Suivi</td>
+        <td>Plateforme de gestion RH et reporting</td>
+        <td class="highlight">30,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Suivi annuel et ajustements (3 ans)</td>
+        <td>15,000</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="2">Total Général</td>
+        <td class="highlight">205,000</td>
+      </tr>
+    </table>
     <footer>© 2024 Journey - Plan d'Action GEPP</footer>
   </div>
 </body>
