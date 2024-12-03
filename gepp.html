@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Global - Plan d'Action GEPP</title>
+    <title>Matrice des Compétences - Plan d'Action GEPP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,163 +24,150 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-top: 20px;
         }
         table, th, td {
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 6px;
+            padding: 12px;
             text-align: left;
-            font-size: 0.85em;
         }
         th {
             background-color: #004080;
             color: white;
         }
-        .category-row {
+        tr.category-row {
             background-color: #e8eaf6;
             font-weight: bold;
         }
         .highlight {
-            color: #004080;
-            font-weight: bold;
+            background-color: #f9f9f9;
         }
-        .total-row {
-            background-color: #f0f0f0;
+        .header-cell {
             font-weight: bold;
+            background-color: #e1f5fe;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Budget Global - Plan d'Action GEPP</h1>
+        <h1>Matrice des Compétences - Plan d'Action GEPP</h1>
 
         <table>
             <thead>
-                <tr>
-                    <th>Catégorie</th>
-                    <th>Coût Total Estimé</th>
-                    <th>Collab. à Former</th>
-                    <th>Objectif</th>
-                    <th>Justification</th>
+                <tr class="header-row">
+                    <th class="header-cell">Compétence</th>
+                    <th class="header-cell">Métier/Rôle</th>
+                    <th class="header-cell">Niveau requis</th>
+                    <th class="header-cell">Formation associée</th>
+                    <th class="header-cell">Collaborateurs concernés</th>
+                    <th class="header-cell">Objectifs associés</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Formations Obligatoires -->
+                <!-- Compétences Obligatoires -->
                 <tr class="category-row">
-                    <td colspan="5"><strong>Formations Obligatoires</strong></td>
+                    <td colspan="6"><strong>Formations Obligatoires</strong></td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Réglementation aéronautique</td>
-                    <td>~1 125 000 €</td>
+                    <td>Technicien de maintenance</td>
+                    <td>Avancé</td>
+                    <td>Formation réglementations (Airbus Training Center)</td>
                     <td>750</td>
                     <td>Maîtriser les réglementations pour la maintenance</td>
-                    <td>Formation par Airbus Training Center, durée : 2-3 jours.</td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Formation Sécurité et Facteurs Humains</td>
-                    <td>~450 000 €</td>
+                    <td>Technicien de maintenance</td>
+                    <td>Intermédiaire</td>
+                    <td>Formation sécurité (Air Formation)</td>
                     <td>750</td>
                     <td>Réduire les risques humains dans la maintenance</td>
-                    <td>Formation d'une journée par Air Formation.</td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Gestion des émissions et normes environnementales</td>
-                    <td>~525 000 €</td>
+                    <td>Technicien environnemental</td>
+                    <td>Intermédiaire</td>
+                    <td>Formation Green Aviation Academy</td>
                     <td>750</td>
-                    <td>Comprendre les nouvelles réglementations environnementales</td>
-                    <td>Formation par Green Aviation Academy.</td>
+                    <td>Connaître les normes ISO 14001 et les nouvelles réglementations</td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Formation Sécurité en Milieu Aéroportuaire</td>
-                    <td>~600 000 €</td>
+                    <td>Technicien aéroportuaire</td>
+                    <td>Avancé</td>
+                    <td>Formation sécurité aéroportuaire (Aéroport de Paris)</td>
                     <td>750</td>
                     <td>Garantir le respect des normes de sécurité</td>
-                    <td>Formation par Aéroport de Paris Formation.</td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Sensibilisation à la Transition Hydrogène</td>
-                    <td>~750 000 €</td>
+                    <td>Technicien de maintenance</td>
+                    <td>Avancé</td>
+                    <td>Formation hydrogène (Safran Training Academy)</td>
                     <td>750</td>
                     <td>Former à l’utilisation de l’hydrogène</td>
-                    <td>Formation par Safran Training Academy.</td>
                 </tr>
 
-                <!-- Formations Techniques -->
+                <!-- Compétences Techniques -->
                 <tr class="category-row">
-                    <td colspan="5"><strong>Formations Techniques</strong></td>
+                    <td colspan="6"><strong>Formations Techniques</strong></td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Propulsion Hydrogène</td>
-                    <td>~750 000 €</td>
+                    <td>Technicien moteur</td>
+                    <td>Expert</td>
+                    <td>Formation propulsion hydrogène (Safran Corporate University)</td>
                     <td>250</td>
-                    <td>Former à la propulsion hydrogène</td>
-                    <td>Formation par Safran Corporate University.</td>
+                    <td>Former à l’utilisation de la propulsion hydrogène</td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Big Data pour l'Aéronautique</td>
-                    <td>~500 000 €</td>
+                    <td>Ingénieur Data</td>
+                    <td>Avancé</td>
+                    <td>Formation Big Data (Dataiku)</td>
                     <td>200</td>
-                    <td>Utilisation des Big Data dans l'aéronautique</td>
-                    <td>Formation de 2 jours par Dataiku.</td>
+                    <td>Savoir analyser les données de maintenance et d’opérations</td>
                 </tr>
-                <tr>
+                <tr class="highlight">
                     <td>Maintenance Prédictive</td>
-                    <td>~600 000 €</td>
+                    <td>Technicien de maintenance</td>
+                    <td>Avancé</td>
+                    <td>Formation maintenance prédictive (Airbus Digital Maintenance)</td>
                     <td>300</td>
-                    <td>Maintenance prédictive</td>
-                    <td>Formation par Airbus Digital Maintenance Analytics.</td>
+                    <td>Former à la maintenance prédictive</td>
                 </tr>
 
-                <!-- Autres Dépenses -->
+                <!-- Autres Compétences -->
                 <tr class="category-row">
-                    <td colspan="5"><strong>Autres Dépenses</strong></td>
+                    <td colspan="6"><strong>Autres Compétences</strong></td>
                 </tr>
-                <tr>
-                    <td>Audit et Cartographie des Compétences</td>
-                    <td>~100 000 €</td>
-                    <td>1</td>
-                    <td>Cartographie complète des compétences</td>
-                    <td>Audit externe pour créer la cartographie des talents.</td>
+                <tr class="highlight">
+                    <td>Gestion de Projet Agile</td>
+                    <td>Chef de projet</td>
+                    <td>Intermédiaire</td>
+                    <td>Formation gestion agile (Air Formation)</td>
+                    <td>50</td>
+                    <td>Mettre en place une gestion de projet agile</td>
                 </tr>
-                <tr>
-                    <td>Workshops et Séminaires</td>
-                    <td>~50 000 €</td>
-                    <td>1</td>
-                    <td>Ateliers et séminaires sur la gestion des talents</td>
-                    <td>Organisation de workshops animés par des consultants externes.</td>
+                <tr class="highlight">
+                    <td>Leadership et Management</td>
+                    <td>Manager</td>
+                    <td>Avancé</td>
+                    <td>Formation Leadership et Management</td>
+                    <td>100</td>
+                    <td>Former les managers à la gestion d’équipes</td>
                 </tr>
-                <tr>
-                    <td>Outils & Technologies pour la formation</td>
-                    <td>~200 000 €</td>
-                    <td>1</td>
-                    <td>Outils pédagogiques pour la formation</td>
-                    <td>Acquisition de plateformes de e-learning et outils de gestion.</td>
-                </tr>
-                <tr>
-                    <td>Recrutement (350 personnes)</td>
-                    <td>~1 750 000 €</td>
-                    <td>350</td>
-                    <td>Recrutement pour renforcer l'équipe</td>
-                    <td>Prestations de recrutement et recrutement direct.</td>
-                </tr>
-                <tr>
-                    <td>Salaire des nouveaux recrutés</td>
-                    <td>~10 500 000 €</td>
-                    <td>350</td>
-                    <td>Salaires des nouveaux collaborateurs</td>
-                    <td>Salaires des 350 nouveaux recrutés (30 000 € par an par personne).</td>
-                </tr>
-
-                <!-- Total -->
-                <tr class="total-row">
-                    <td><strong>Total estimé sur 3 ans</strong></td>
-                    <td><strong>~15 000 000 €</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr class="highlight">
+                    <td>Communication en milieu aéronautique</td>
+                    <td>Tous les employés</td>
+                    <td>Intermédiaire</td>
+                    <td>Formation communication (Air Formation)</td>
+                    <td>1000</td>
+                    <td>Améliorer la communication au sein de l’équipe</td>
                 </tr>
             </tbody>
         </table>
