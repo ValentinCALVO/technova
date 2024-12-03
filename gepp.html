@@ -3,169 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrice des Compétences - GEPP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Tableau Comparatif des Formations et Prestataires</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7fb;
+            background-color: #f8f9fa;
             color: #333;
         }
         .container {
-            width: 90%;
+            width: 80%;
             margin: 0 auto;
             padding: 20px;
-            max-width: 1000px;
         }
         h1 {
             text-align: center;
-            color: #2d5876;
-            margin-bottom: 30px;
+            color: #004080;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
         }
         th, td {
-            padding: 15px;
-            text-align: center;
-            border: 1px solid #ddd;
-            font-size: 14px;
+            padding: 12px;
+            text-align: left;
         }
         th {
-            background-color: #2d5876;
+            background-color: #004080;
             color: white;
         }
-        .competence-row {
-            background-color: #e7f0f9;
-        }
-        .level-1 {
-            background-color: #ffebeb;
-        }
-        .level-2 {
-            background-color: #ffe1a1;
-        }
-        .level-3 {
-            background-color: #c6e6c6;
-        }
-        .level-4 {
-            background-color: #b3d9ff;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
         .highlight {
-            color: #2d5876;
             font-weight: bold;
-        }
-        .icon-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            color: #004080;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Matrice des Compétences - Plan d'Action GEPP</h1>
-        
+        <h1>Tableau Comparatif des Formations et Prestataires</h1>
+
         <table>
             <thead>
                 <tr>
-                    <th>Compétences</th>
-                    <th>Métier</th>
-                    <th>Rôle</th>
-                    <th>Compétence Technique</th>
-                    <th>Objectif de Formation</th>
-                    <th>Niveau</th>
-                    <th>Formation Associée</th>
+                    <th>Formation</th>
+                    <th>Prestataire</th>
+                    <th>Coût Unitaire</th>
+                    <th>Durée</th>
+                    <th>Objectif</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="competence-row">
-                    <td>
-                        <div class="icon-wrapper"><i class="fas fa-plane"></i></div>
-                        Réglementation Aéronautique
-                    </td>
-                    <td>Maintenance Avion</td>
-                    <td>Technicien</td>
-                    <td>Connaissances des normes de maintenance aéronautique</td>
-                    <td>Obtenir la certification conforme aux exigences réglementaires</td>
-                    <td class="level-3">Avancé</td>
-                    <td>Airbus Training Center (2-3 jours)</td>
+                <tr>
+                    <td>Réglementation Aéronautique</td>
+                    <td>Airbus Training Center</td>
+                    <td>1 200 € - 1 500 €</td>
+                    <td>2-3 jours</td>
+                    <td>Maîtriser les réglementations pour la maintenance aéronautique</td>
                 </tr>
-                <tr class="competence-row">
-                    <td>
-                        <div class="icon-wrapper"><i class="fas fa-hard-hat"></i></div>
-                        Sécurité & Facteurs Humains
-                    </td>
-                    <td>Maintenance Aérienne</td>
-                    <td>Technicien</td>
-                    <td>Gestion des risques liés aux facteurs humains dans la maintenance</td>
-                    <td>Réduire les erreurs humaines dans la maintenance aéronautique</td>
-                    <td class="level-2">Intermédiaire</td>
-                    <td>Air Formation (1 jour)</td>
+                <tr>
+                    <td>Formation Sécurité et Facteurs Humains</td>
+                    <td>Air Formation</td>
+                    <td>600 €</td>
+                    <td>1 jour</td>
+                    <td>Réduire les risques humains dans les opérations de maintenance</td>
                 </tr>
-                <tr class="competence-row">
-                    <td>
-                        <div class="icon-wrapper"><i class="fas fa-leaf"></i></div>
-                        Gestion des Normes Environnementales
-                    </td>
-                    <td>Technicien Environnement</td>
-                    <td>Technicien</td>
-                    <td>Connaissance des normes ISO et réduction des émissions polluantes</td>
-                    <td>Comprendre et appliquer les réglementations environnementales dans l’aéronautique</td>
-                    <td class="level-3">Avancé</td>
-                    <td>Green Aviation Academy (2 jours)</td>
+                <tr>
+                    <td>Gestion des Émissions et Normes Environnementales</td>
+                    <td>Green Aviation Academy</td>
+                    <td>700 €</td>
+                    <td>1-2 jours</td>
+                    <td>Former aux normes environnementales ISO 14001</td>
                 </tr>
-                <tr class="competence-row">
-                    <td>
-                        <div class="icon-wrapper"><i class="fas fa-hydraulic-pump"></i></div>
-                        Propulsion Hydrogène
-                    </td>
-                    <td>Ingénierie Propulsion</td>
-                    <td>Ingénieur</td>
-                    <td>Compréhension des systèmes de propulsion hydrogène pour aéronefs</td>
-                    <td>Préparer les collaborateurs à la transition vers la propulsion hydrogène</td>
-                    <td class="level-4">Expert</td>
-                    <td>Safran Training Academy (3 jours)</td>
+                <tr>
+                    <td>Formation Sécurité en Milieu Aéroportuaire</td>
+                    <td>Aéroport de Paris Formation</td>
+                    <td>800 €</td>
+                    <td>1 jour</td>
+                    <td>Garantir la conformité aux normes de sécurité en milieu aéroportuaire</td>
                 </tr>
-                <tr class="competence-row">
-                    <td>
-                        <div class="icon-wrapper"><i class="fas fa-database"></i></div>
-                        Big Data pour l'Aéronautique
-                    </td>
-                    <td>Ingénierie Aéronautique</td>
-                    <td>Analyste</td>
-                    <td>Utilisation des données massives pour améliorer les processus de maintenance et de gestion</td>
-                    <td>Maîtriser l’exploitation des données dans un contexte aéronautique pour prédire les pannes</td>
-                    <td class="level-3">Avancé</td>
-                    <td>Dataiku (2 jours)</td>
+                <tr>
+                    <td>Sensibilisation à la Transition Hydrogène</td>
+                    <td>Safran Training Academy</td>
+                    <td>1 000 €</td>
+                    <td>2-3 jours</td>
+                    <td>Former à l’utilisation de l’hydrogène dans l’aéronautique</td>
                 </tr>
-                <tr class="competence-row">
-                    <td>
-                        <div class="icon-wrapper"><i class="fas fa-tools"></i></div>
-                        Maintenance Prédictive
-                    </td>
-                    <td>Maintenance Aéronautique</td>
-                    <td>Technicien</td>
-                    <td>Maintenance basée sur la collecte de données et la détection des défaillances avant leur survenue</td>
-                    <td>Réduire les coûts de maintenance tout en augmentant la disponibilité des avions</td>
-                    <td class="level-4">Expert</td>
-                    <td>Airbus Digital Maintenance (3 jours)</td>
+                <tr>
+                    <td>Propulsion Hydrogène</td>
+                    <td>Safran Corporate University</td>
+                    <td>3 000 €</td>
+                    <td>3 jours</td>
+                    <td>Maîtriser la technologie de propulsion hydrogène pour l’aéronautique</td>
                 </tr>
-                <tr class="competence-row">
-                    <td>
-                        <div class="icon-wrapper"><i class="fas fa-cogs"></i></div>
-                        Automatisation des Processus
-                    </td>
-                    <td>Ingénierie Aéronautique</td>
-                    <td>Ingénieur</td>
-                    <td>Automatisation des processus de maintenance avec l’IA et l’automatisation des tâches répétitives</td>
-                    <td>Optimiser les processus de maintenance et réduire les coûts de main-d'œuvre</td>
-                    <td class="level-3">Avancé</td>
-                    <td>IBM Watson Training (2 jours)</td>
+                <tr>
+                    <td>Big Data pour l'Aéronautique</td>
+                    <td>Dataiku</td>
+                    <td>2 500 €</td>
+                    <td>2 jours</td>
+                    <td>Utiliser les Big Data pour optimiser les opérations aéronautiques</td>
+                </tr>
+                <tr>
+                    <td>Maintenance Prédictive</td>
+                    <td>Airbus Digital Maintenance Analytics</td>
+                    <td>2 000 €</td>
+                    <td>3 jours</td>
+                    <td>Former à l’utilisation des outils de maintenance prédictive</td>
                 </tr>
             </tbody>
         </table>
