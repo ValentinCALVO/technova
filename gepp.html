@@ -3,79 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau Comparatif des Formations et Prestataires</title>
+    <title>Tableau Comparatif des Formations</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
             margin: 0;
             padding: 0;
-            background-color: #f0f4f8;
             color: #333;
         }
         .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 30px;
+            width: 95%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
         }
         h1 {
             text-align: center;
-            color: #ff6347;
-            font-size: 28px;
-            margin-bottom: 30px;
+            font-size: 24px;
+            color: #3a6ea5;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            padding: 16px;
+            padding: 15px;
             text-align: center;
-            font-size: 14px;
         }
         th {
-            background-color: #ff6347;
-            color: #ffffff; /* Le texte est maintenant explicitement blanc */
+            background-color: #3a6ea5;
+            color: white;
             font-weight: bold;
-            border-bottom: 3px solid #f2f2f2;
         }
-        tr:nth-child(even) {
+        tbody tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-        tr:hover {
-            background-color: #ffe4e1;
+        tbody tr:hover {
+            background-color: #e6f7ff;
         }
         td {
-            background-color: #ffffff;
+            font-size: 14px;
         }
         .category-header {
-            background-color: #ffe4e1;
-            color: #ff6347;
+            background-color: #f0f8ff;
+            color: #3a6ea5;
             font-weight: bold;
             text-align: center;
             font-size: 16px;
-            padding: 12px;
+            border-top: 2px solid #3a6ea5;
+            border-bottom: 2px solid #3a6ea5;
+        }
+        .cost {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .duration {
+            color: #6c757d;
         }
         .rating {
             color: #ffcc00;
-        }
-        .highlight {
             font-weight: bold;
-            color: #d14a66;
-        }
-        .cost, .duration {
-            color: #20b2aa;
         }
         .objective {
-            color: #333;
+            font-style: italic;
+            color: #495057;
         }
         .advantages, .disadvantages {
-            font-size: 12px;
-            color: #555;
             text-align: left;
-            padding: 5px 0;
+            padding: 10px;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -98,6 +99,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Formations Obligatoires -->
                 <tr class="category-header">
                     <td colspan="8">Formations Obligatoires</td>
                 </tr>
@@ -108,8 +110,8 @@
                     <td class="duration">2-3 jours</td>
                     <td class="rating">⭐⭐⭐⭐⭐</td>
                     <td class="objective">Maîtriser les réglementations pour la maintenance aéronautique</td>
-                    <td class="advantages">Formation certifiée, excellente réputation du prestataire, adaptée aux exigences légales.</td>
-                    <td class="disadvantages">Coût relativement élevé, durée relativement longue pour certains profils.</td>
+                    <td class="advantages">Formation certifiée, adaptée aux exigences légales.</td>
+                    <td class="disadvantages">Coût élevé, durée longue pour certains.</td>
                 </tr>
                 <tr>
                     <td>Formation Sécurité et Facteurs Humains</td>
@@ -117,39 +119,54 @@
                     <td class="cost">600 €</td>
                     <td class="duration">1 jour</td>
                     <td class="rating">⭐⭐⭐⭐</td>
-                    <td class="objective">Réduire les risques humains dans les opérations de maintenance</td>
-                    <td class="advantages">Formation courte, bon rapport qualité-prix, adaptée à un large public.</td>
-                    <td class="disadvantages">Peu adaptée aux profils déjà expérimentés, manque de personnalisation.</td>
+                    <td class="objective">Réduire les risques humains</td>
+                    <td class="advantages">Formation courte, excellent rapport qualité-prix.</td>
+                    <td class="disadvantages">Peu adaptée aux experts.</td>
                 </tr>
                 <tr>
-                    <td>Gestion des Émissions et Normes Environnementales</td>
+                    <td>Normes Environnementales</td>
                     <td>Green Aviation Academy</td>
                     <td class="cost">700 €</td>
                     <td class="duration">1-2 jours</td>
                     <td class="rating">⭐⭐⭐⭐</td>
-                    <td class="objective">Former aux normes environnementales ISO 14001</td>
-                    <td class="advantages">Formation adaptée aux enjeux écologiques actuels, bon rapport qualité/prix.</td>
-                    <td class="disadvantages">Formation assez théorique, pas assez d’exemples pratiques.</td>
+                    <td class="objective">Conformité aux normes ISO 14001</td>
+                    <td class="advantages">Formation adaptée aux enjeux écologiques.</td>
+                    <td class="disadvantages">Formation assez théorique.</td>
+                </tr>
+
+                <!-- Formations Techniques -->
+                <tr class="category-header">
+                    <td colspan="8">Formations Techniques</td>
                 </tr>
                 <tr>
-                    <td>Formation Sécurité en Milieu Aéroportuaire</td>
-                    <td>Aéroport de Paris Formation</td>
-                    <td class="cost">800 €</td>
-                    <td class="duration">1 jour</td>
+                    <td>Propulsion Hydrogène</td>
+                    <td>Safran Corporate University</td>
+                    <td class="cost">3 000 €</td>
+                    <td class="duration">3 jours</td>
                     <td class="rating">⭐⭐⭐⭐⭐</td>
-                    <td class="objective">Garantir la conformité aux normes de sécurité en milieu aéroportuaire</td>
-                    <td class="advantages">Formateur expert, formation très pratique avec des simulations en conditions réelles.</td>
-                    <td class="disadvantages">Coût élevé pour une journée seulement.</td>
+                    <td class="objective">Apprendre la propulsion hydrogène</td>
+                    <td class="advantages">Formation innovante, hautement technique.</td>
+                    <td class="disadvantages">Coût très élevé.</td>
                 </tr>
                 <tr>
-                    <td>Sensibilisation à la Transition Hydrogène</td>
-                    <td>Safran Training Academy</td>
-                    <td class="cost">1 000 €</td>
-                    <td class="duration">2-3 jours</td>
+                    <td>Big Data pour l'Aéronautique</td>
+                    <td>Dataiku</td>
+                    <td class="cost">2 500 €</td>
+                    <td class="duration">2 jours</td>
                     <td class="rating">⭐⭐⭐⭐</td>
-                    <td class="objective">Former à l’utilisation de l’hydrogène dans l’aéronautique</td>
-                    <td class="advantages">Formation innovante, alignée avec les évolutions technologiques de l’aéronautique.</td>
-                    <td class="disadvantages">Formation encore peu répandue, nécessite un public très ciblé.</td>
+                    <td class="objective">Utiliser le Big Data dans l'aéronautique</td>
+                    <td class="advantages">Adaptée aux enjeux numériques actuels.</td>
+                    <td class="disadvantages">Formation réservée aux techniciens IT.</td>
+                </tr>
+                <tr>
+                    <td>Maintenance Prédictive</td>
+                    <td>Airbus Digital Analytics</td>
+                    <td class="cost">2 000 €</td>
+                    <td class="duration">3 jours</td>
+                    <td class="rating">⭐⭐⭐⭐⭐</td>
+                    <td class="objective">Optimiser la maintenance via les données</td>
+                    <td class="advantages">Formation hautement pratique et technique.</td>
+                    <td class="disadvantages">Coût élevé.</td>
                 </tr>
             </tbody>
         </table>
