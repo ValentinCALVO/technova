@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page de Maintenance Ultra Moderne</title>
+  <title>VALIFRUITY - Page de Maintenance</title>
   <style>
+    /* Réinitialisation de base */
     * {
       margin: 0;
       padding: 0;
@@ -12,40 +13,49 @@
     }
 
     body {
-      font-family: 'Arial', sans-serif;
-      background: #111;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0a;
       color: #fff;
-      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      height: 100vh;
       text-align: center;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
     }
 
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-      animation: fadeIn 2s ease-out;
+      font-size: 4em;
+      margin-bottom: 20px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      background: linear-gradient(45deg, #00bcd4, #ff4081);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 2s ease-in-out infinite;
     }
 
     p {
       font-size: 1.2em;
-      margin-bottom: 20px;
-      animation: fadeIn 3s ease-out;
+      margin-bottom: 30px;
+      color: #bbb;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .maintenance-icon {
       font-size: 5em;
-      color: #f39c12;
+      color: #ff4081;
       margin-bottom: 20px;
-      animation: rotate 2s linear infinite;
+      animation: pulse 2s infinite;
     }
 
     .countdown {
       font-size: 2em;
-      color: #e74c3c;
+      color: #00bcd4;
       margin: 20px 0;
+      animation: blink 1s linear infinite;
     }
 
     .button-container {
@@ -55,24 +65,33 @@
     }
 
     .button {
-      padding: 10px 20px;
+      padding: 15px 30px;
       font-size: 1.1em;
-      background: #3498db;
-      border: none;
-      border-radius: 5px;
+      background: transparent;
+      border: 2px solid #00bcd4;
+      border-radius: 50px;
+      color: #00bcd4;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: 0.3s;
+      letter-spacing: 2px;
     }
 
     .button:hover {
-      background: #2980b9;
+      background-color: #00bcd4;
+      color: #0a0a0a;
     }
 
     .footer {
       position: fixed;
-      bottom: 20px;
-      font-size: 1em;
-      opacity: 0.5;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4; }
+      50% { text-shadow: 0 0 20px #ff4081, 0 0 30px #ff4081; }
+      100% { text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4; }
     }
 
     @keyframes fadeIn {
@@ -80,33 +99,56 @@
       100% { opacity: 1; }
     }
 
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
     }
 
-    /* Animation du compteur */
-    @keyframes countdownAnimation {
-      0% { color: #e74c3c; }
-      50% { color: #f39c12; }
-      100% { color: #2ecc71; }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    /* Effet d'arrière-plan futuriste */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+      z-index: -1;
     }
   </style>
 </head>
 <body>
 
-  <div class="maintenance-icon">🔧</div>
-  <h1>Nous effectuons une maintenance</h1>
-  <p>Nous revenons très bientôt, merci de votre patience.</p>
+  <!-- Arrière-plan futuriste -->
+  <div class="background"></div>
+
+  <!-- Icône de maintenance -->
+  <div class="maintenance-icon">⚙️</div>
+
+  <!-- Nom du site -->
+  <h1>VALIFRUITY</h1>
+
+  <!-- Message de maintenance -->
+  <p>Nous effectuons une mise à jour. Merci de votre patience.</p>
+
+  <!-- Compteur -->
   <div id="countdown" class="countdown"></div>
 
+  <!-- Boutons -->
   <div class="button-container">
     <button class="button" onclick="tryLater()">Essayer Plus Tard</button>
     <button class="button" onclick="goHome()">Retour à la Page d'Accueil</button>
   </div>
 
+  <!-- Footer -->
   <div class="footer">
-    <p>© 2025 VotreSite. Tous droits réservés.</p>
+    <p>© 2025 VALIFRUITY. Tous droits réservés.</p>
   </div>
 
   <script>
@@ -142,9 +184,6 @@
     }
 
     let countdownInterval = setInterval(updateCountdown, 1000);
-
-    // Ajout d'une animation à la couleur du compteur
-    countdownElement.style.animation = "countdownAnimation 1s infinite";
   </script>
 
 </body>
