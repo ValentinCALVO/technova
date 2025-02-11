@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page de Maintenance Ultra Moderne</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #111;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      animation: fadeIn 2s ease-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      animation: fadeIn 3s ease-out;
+    }
+
+    .maintenance-icon {
+      font-size: 5em;
+      color: #f39c12;
+      margin-bottom: 20px;
+      animation: rotate 2s linear infinite;
+    }
+
+    .countdown {
+      font-size: 2em;
+      color: #e74c3c;
+      margin: 20px 0;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background: #3498db;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #2980b9;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      font-size: 1em;
+      opacity: 0.5;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Animation du compteur */
+    @keyframes countdownAnimation {
+      0% { color: #e74c3c; }
+      50% { color: #f39c12; }
+      100% { color: #2ecc71; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="maintenance-icon">🔧</div>
+  <h1>Nous effectuons une maintenance</h1>
+  <p>Nous revenons très bientôt, merci de votre patience.</p>
+  <div id="countdown" class="countdown"></div>
+
+  <div class="button-container">
+    <button class="button" onclick="tryLater()">Essayer Plus Tard</button>
+    <button class="button" onclick="goHome()">Retour à la Page d'Accueil</button>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 VotreSite. Tous droits réservés.</p>
+  </div>
+
+  <script>
+    // Fonction pour afficher un message d'essaie plus tard
+    function tryLater() {
+      alert('Nous espérons que la maintenance ne prendra pas trop de temps!');
+    }
+
+    // Fonction pour rediriger l'utilisateur vers la page d'accueil
+    function goHome() {
+      window.location.href = '/'; // Remplacer par l'URL de votre page d'accueil
+    }
+
+    // Countdown Timer
+    let countdownDate = new Date().getTime() + 3600 * 1000; // 1 heure à partir de maintenant
+    let countdownElement = document.getElementById('countdown');
+
+    function updateCountdown() {
+      let now = new Date().getTime();
+      let distance = countdownDate - now;
+
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        countdownElement.innerHTML = "Maintenance terminée!";
+        countdownElement.style.color = "#2ecc71"; // Vert quand la maintenance est finie
+      }
+    }
+
+    let countdownInterval = setInterval(updateCountdown, 1000);
+
+    // Ajout d'une animation à la couleur du compteur
+    countdownElement.style.animation = "countdownAnimation 1s infinite";
+  </script>
+
+</body>
+</html>
